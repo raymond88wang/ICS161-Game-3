@@ -9,6 +9,8 @@ Direct3D:
 Begin MonoManager ReloadAssembly
 Platform assembly: D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
 Platform assembly: D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
@@ -17,23 +19,109 @@ Platform assembly: D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data
 Loading D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.097 seconds
+Platform assembly: D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\Photon3Unity3D.dll (this message is harmless)
+Loading D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\Photon3Unity3D.dll into Unity Child Domain
+- Completed reload, in  0.511 seconds
 Platform assembly: D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Unity Projects\ICS161-Game-3\ICS 161 Game 3\TempBuild_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.106872 ms
+UnloadTime: 3.596027 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 4b8 -> priority: 1 
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777}
-ClientDisconnected due to error: Timeout
+  Thread -> id: fcc -> priority: 1 
+OnStatusChanged: Connect current State: ConnectingToNameServer
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:62391}
-ServerDisconnected due to error: Timeout
+Connected to NameServer.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OnStatusChanged: EncryptionEstablished current State: ConnectingToNameServer
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OperationResponse 230: ReturnCode: 0.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Received your UserID from server. Updating local value to: kweh
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OnStatusChanged: Disconnect current State: DisconnectingFromNameServer
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OnStatusChanged: Connect current State: ConnectingToMasterserver
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Connected to masterserver.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OnStatusChanged: EncryptionEstablished current State: Authenticating
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OnEvent: Event 226.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OperationResponse 230: ReturnCode: 0.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OperationResponse 226: ReturnCode: 0.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OnStatusChanged: Disconnect current State: DisconnectingFromMasterserver
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OnStatusChanged: Connect current State: ConnectingToGameserver
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Connected to gameserver.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OnStatusChanged: EncryptionEstablished current State: ConnectedToGameserver
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OperationResponse 230: ReturnCode: 0.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OperationResponse 226: ReturnCode: 0.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OnEvent: Event 255.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.263808 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 506.
+Total: 0.849044 ms (FindLiveObjects: 0.079610 ms CreateObjectMapping: 0.063196 ms MarkObjects: 0.656173 ms  DeleteObjects: 0.030366 ms)
+
+Registered PhotonView: 1001
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OperationResponse 252: ReturnCode: 0.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OperationResponse 252: ReturnCode: 0.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
