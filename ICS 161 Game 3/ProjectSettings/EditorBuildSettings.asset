@@ -6,4 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Melody's Scene.unity
+    path: Assets/Scenes/Lobby.unity
+  - enabled: 1
+    path: Assets/Scenes/Level 1 - Tutorial.unity
