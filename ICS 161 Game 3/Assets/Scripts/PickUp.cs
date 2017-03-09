@@ -27,6 +27,11 @@ public class PickUp : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (HeldItemName.Equals("Bow"))
+            GetComponent<ArrowShooting>().enabled = true;
+        else
+            GetComponent<ArrowShooting>().enabled = false;
+
         UpdateHeldItemUI();
         if (Input.GetKeyDown("e"))
         {
@@ -60,7 +65,7 @@ public class PickUp : MonoBehaviour {
     {
         if (other.gameObject.tag == "item" && HeldItemName == "None")
         {
-            Debug.Log("Can pick up " + other.gameObject.tag);
+            Debug.Log("Can pick up " + other.gameObject.GetComponent<Item>().getName());
             canPickUp = true;
             itemToPickUp = other.gameObject;
         }
@@ -70,7 +75,7 @@ public class PickUp : MonoBehaviour {
     {
         if (other.gameObject.tag == "item")
         {
-            Debug.Log("Cannot pick up" + other.gameObject.tag);
+            Debug.Log("Cannot pick up " + other.gameObject.GetComponent<Item>().getName());
             canPickUp = false;
         }
     }
@@ -78,5 +83,10 @@ public class PickUp : MonoBehaviour {
     void UpdateHeldItemUI()
     {
         //heldItem.text = "Holding: " + HeldItemName + "\nCan pick up: " + canPickUp + "\nIs holding item: " + isHoldingItem;
+    }
+
+    public string getHeldItemName()
+    {
+        return HeldItemName;
     }
 }
