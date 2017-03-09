@@ -10,6 +10,7 @@ TagManager:
   - hold slot
   - camera
   - lock
+  - Enemy
   layers:
   - Default
   - TransparentFX
