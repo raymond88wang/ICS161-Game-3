@@ -77,6 +77,6 @@ public class PickUp : MonoBehaviour {
 
     void UpdateHeldItemUI()
     {
-        heldItem.text = "Holding: " + HeldItemName + "\nCan pick up: " + canPickUp + "\nIs holding item: " + isHoldingItem;
+        //heldItem.text = "Holding: " + HeldItemName + "\nCan pick up: " + canPickUp + "\nIs holding item: " + isHoldingItem;
     }
 }
