@@ -42,7 +42,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 7
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -1988,9 +1988,16 @@ Prefab:
       propertyPath: heldItem
       value: 
       objectReference: {fileID: 530863632}
-    - target: {fileID: 1169542933764228, guid: f0e5ab500704c1940a1f2ce3e690fddc, type: 2}
-      propertyPath: m_Name
-      value: Player1
+    - target: {fileID: 20772512447186140, guid: f0e5ab500704c1940a1f2ce3e690fddc,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 20772512447186140, guid: f0e5ab500704c1940a1f2ce3e690fddc,
+        type: 2}
+      propertyPath: field of view
+      value: 80
+
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0e5ab500704c1940a1f2ce3e690fddc, type: 2}
@@ -3014,7 +3021,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4588055076219664, guid: f0e5ab500704c1940a1f2ce3e690fddc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 31.05
+      value: 31.39
       objectReference: {fileID: 0}
     - target: {fileID: 4588055076219664, guid: f0e5ab500704c1940a1f2ce3e690fddc, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3052,9 +3059,20 @@ Prefab:
       propertyPath: m_TagString
       value: Player2
       objectReference: {fileID: 0}
-    - target: {fileID: 1169542933764228, guid: f0e5ab500704c1940a1f2ce3e690fddc, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 20772512447186140, guid: f0e5ab500704c1940a1f2ce3e690fddc,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 20772512447186140, guid: f0e5ab500704c1940a1f2ce3e690fddc,
+        type: 2}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 20772512447186140, guid: f0e5ab500704c1940a1f2ce3e690fddc,
+        type: 2}
+      propertyPath: field of view
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0e5ab500704c1940a1f2ce3e690fddc, type: 2}
