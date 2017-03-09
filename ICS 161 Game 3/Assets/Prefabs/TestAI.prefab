@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 195092822979536790}
   - component: {fileID: 114305657715354068}
   - component: {fileID: 114665040721165344}
+  - component: {fileID: 65745106897536788}
   m_Layer: 0
   m_Name: TestAI
   m_TagString: Untagged
@@ -83,6 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1721548074398938}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65745106897536788
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1721548074398938}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65810661321041322
 BoxCollider:
   m_ObjectHideFlags: 1
