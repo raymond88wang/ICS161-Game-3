@@ -44,6 +44,11 @@ public class ControllerPickUp : MonoBehaviour
                 itemToPickUp.GetComponent<Rigidbody>().isKinematic = true;
                 itemToPickUp.GetComponent<SphereCollider>().enabled = false;
                 HeldItemName = itemToPickUp.GetComponent<Item>().getName();
+                if (HeldItemName == "Bow")
+                {
+                    itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
+                    itemToPickUp.transform.localPosition = new Vector3(-.5f, 0, 0);
+                }
                 isHoldingItem = true;
                 Debug.Log("Picked up an item");
             }

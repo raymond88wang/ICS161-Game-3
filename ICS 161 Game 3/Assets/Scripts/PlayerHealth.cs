@@ -12,17 +12,19 @@ public class PlayerHealth : MonoBehaviour
     public float flashSpeed = 5f;                               
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);    
 
-    PlayerController playerMovement;                              
+    //PlayerController playerMovement;                              
     //PlayerShooting playerShooting;                              
     bool isDead;                                                
-    bool damaged;                                               
+    bool damaged;
+    public Text deathMessage;                                            
 
     void Awake()
     {
-        playerMovement = GetComponent<PlayerController>();
+        //playerMovement = GetComponent<PlayerController>();
         //playerShooting = GetComponentInChildren<PlayerShooting>();
 
         currentHealth = startingHealth;
+        deathMessage.text = "";
     }
 
 
@@ -61,8 +63,9 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
         print("Dead");
 
+        deathMessage.text = gameObject.name.ToString() + "Died";
         // Turn off the movement and shooting scripts.
-        playerMovement.enabled = false;
+        //playerMovement.enabled = false;
 
         Invoke("ReloadLevel", 3);
         //playerShooting.enabled = false;
@@ -71,5 +74,6 @@ public class PlayerHealth : MonoBehaviour
     void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        deathMessage.text = "";
     }
 }

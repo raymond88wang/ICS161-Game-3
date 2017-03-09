@@ -40,9 +40,16 @@ public class PickUp : MonoBehaviour {
                 canPickUp = false;
                 itemToPickUp.transform.parent = holdSlot.transform;
                 itemToPickUp.transform.position = holdSlot.transform.position;
+                itemToPickUp.transform.rotation = holdSlot.transform.rotation;
                 itemToPickUp.GetComponent<Rigidbody>().isKinematic = true;
                 itemToPickUp.GetComponent<SphereCollider>().enabled = false;
                 HeldItemName = itemToPickUp.GetComponent<Item>().getName();
+                if(HeldItemName == "Bow")
+                {
+                    //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
+                    itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
+                    itemToPickUp.transform.localPosition = new Vector3(-.5f, 0,0);
+                }
                 isHoldingItem = true;
                 Debug.Log("Picked up an item");
             }
@@ -68,6 +75,7 @@ public class PickUp : MonoBehaviour {
             Debug.Log("Can pick up " + other.gameObject.GetComponent<Item>().getName());
             canPickUp = true;
             itemToPickUp = other.gameObject;
+            print(itemToPickUp);
         }
     }
 

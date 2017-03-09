@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 92788500907972002}
   - component: {fileID: 124369321643761766}
   - component: {fileID: 81998101843112110}
-  - component: {fileID: 114852928595559702}
+  - component: {fileID: 114559386133879130}
   m_Layer: 10
   m_Name: Camera
   m_TagString: camera
@@ -49,10 +49,9 @@ GameObject:
   - component: {fileID: 114914393534045834}
   - component: {fileID: 114431878816474870}
   - component: {fileID: 114686406884201322}
-  - component: {fileID: 114781496622916666}
   m_Layer: 10
   m_Name: Player1
-  m_TagString: Player2
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,8 +66,8 @@ GameObject:
   - component: {fileID: 4531117556373416}
   m_Layer: 10
   m_Name: Hold Slot
-  m_TagString: hold slot 2
-  m_Icon: {fileID: 0}
+  m_TagString: hold slot
+  m_Icon: {fileID: 7707008975528953803, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -92,27 +91,27 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1814926426008202}
-  m_LocalRotation: {x: -0, y: -0.99937785, z: -0, w: -0.035270628}
+  m_LocalRotation: {x: -0, y: -0.9990444, z: 0, w: -0.04370639}
   m_LocalPosition: {x: 36.39, y: 1, z: 27.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4246717805601036}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -184.043, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -185.01, z: 0}
 --- !u!4 &4531117556373416
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1852771120990696}
-  m_LocalRotation: {x: 0.000000007450581, y: 0.050969638, z: 0.0000000011641532, w: 0.99870026}
-  m_LocalPosition: {x: 0.95, y: 0.22, z: 0.66}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.73, y: -0.48, z: 0.68}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4246717805601036}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 5.8430004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20224989583860264
 Camera:
   m_ObjectHideFlags: 1
@@ -131,7 +130,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -229,6 +228,7 @@ MonoBehaviour:
   currentHealth: 0
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
+  deathMessage: {fileID: 0}
 --- !u!114 &114224160979192408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,6 +255,24 @@ MonoBehaviour:
   jumpSpeed: 8
   gravity: 20
   c: {fileID: 143506588038928038}
+--- !u!114 &114559386133879130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1300422160014262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c495b8dd620da4ea8f5bb4a72c8ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clampInDegrees: {x: 360, y: 180}
+  lockCursor: 0
+  sensitivity: {x: 2, y: 2}
+  smoothing: {x: 3, y: 3}
+  targetDirection: {x: 0, y: 0}
+  targetCharacterDirection: {x: 0, y: 0}
+  characterBody: {fileID: 1814926426008202}
 --- !u!114 &114686406884201322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,43 +288,7 @@ MonoBehaviour:
     type: 2}
   spawnPoint: {fileID: 1852771120990696}
   camDirection: {fileID: 4246717805601036}
-  arrowForce: 1500
---- !u!114 &114781496622916666
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1814926426008202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c495b8dd620da4ea8f5bb4a72c8ca1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clampInDegrees: {x: 360, y: 180}
-  lockCursor: 0
-  sensitivity: {x: 2, y: 2}
-  smoothing: {x: 3, y: 3}
-  targetDirection: {x: 0, y: 0}
-  targetCharacterDirection: {x: 0, y: 0}
-  characterBody: {fileID: 1814926426008202}
---- !u!114 &114852928595559702
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1300422160014262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5343453e44a3aa7488f27effa252ca64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clampInDegrees: {x: 360, y: 180}
-  lockCursor: 0
-  sensitivity: {x: 2, y: 2}
-  smoothing: {x: 3, y: 3}
-  targetDirection: {x: 0, y: 0}
-  targetCharacterDirection: {x: 0, y: 0}
-  characterBody: {fileID: 1814926426008202}
+  arrowForce: 2000
 --- !u!114 &114914393534045834
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -8,10 +8,12 @@ public class ArrowsDamageEnemy : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        //print("hit something");
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(arrowDamage);
-            //Destroy(gameObject, 0); // can fix later
+            print("hit");
+            Destroy(gameObject, 0); // can fix later
         }
 
     }
