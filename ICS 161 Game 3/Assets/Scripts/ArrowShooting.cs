@@ -24,8 +24,5 @@ public class ArrowShooting : MonoBehaviour {
 
             Destroy(Temp_Arrow, 7);
         }
-
-
-
     }
 }

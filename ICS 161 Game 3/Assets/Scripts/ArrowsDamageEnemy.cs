@@ -11,6 +11,7 @@ public class ArrowsDamageEnemy : MonoBehaviour {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(arrowDamage);
+            //Destroy(gameObject, 0); // can fix later
         }
     }
 }
