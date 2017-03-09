@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 65810661321041322}
   - component: {fileID: 23194641378151852}
   - component: {fileID: 195092822979536790}
-  - component: {fileID: 114972340134411144}
+  - component: {fileID: 114305657715354068}
+  - component: {fileID: 114665040721165344}
   m_Layer: 0
   m_Name: TestAI
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1721548074398938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: -26.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -94,7 +95,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114972340134411144
+--- !u!114 &114305657715354068
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -102,7 +103,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1721548074398938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7c94ae5f8a4eeb4c89e1a9280821c5e, type: 3}
+  m_Script: {fileID: 11500000, guid: a2f5369dad778454fa79d8bf4ca42825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenAttacks: 0.5
+  attackDamage: 10
+--- !u!114 &114665040721165344
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1721548074398938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbbe855807a77544805bbea6ba4e884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!195 &195092822979536790
