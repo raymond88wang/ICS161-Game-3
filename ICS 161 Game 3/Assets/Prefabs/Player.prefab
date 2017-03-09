@@ -25,10 +25,12 @@ GameObject:
   - component: {fileID: 143023289251387534}
   - component: {fileID: 54644535950586354}
   - component: {fileID: 114885551438763252}
-  - component: {fileID: 114493152499861882}
+  - component: {fileID: 114936667864632206}
+  - component: {fileID: 114640893550043314}
+  - component: {fileID: 114430366615327442}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +212,22 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1309654085818582}
   m_Enabled: 1
---- !u!114 &114493152499861882
+--- !u!114 &114430366615327442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169542933764228}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd01755e2ddef3a458cfbeb08f95205f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabArrow: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  camDirection: {fileID: 0}
+  arrowForce: 0
+--- !u!114 &114640893550043314
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -218,10 +235,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1169542933764228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 690d8c54b2b83744fb51b7ee89e31bf1, type: 3}
+  m_Script: {fileID: 11500000, guid: fb2b990ac66b2dd4ea679d403fb55773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
+  startingHealth: 100
+  currentHealth: 0
+  flashSpeed: 5
+  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
 --- !u!114 &114885551438763252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,6 +257,18 @@ MonoBehaviour:
   jumpSpeed: 8
   gravity: 20
   c: {fileID: 143023289251387534}
+--- !u!114 &114936667864632206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169542933764228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690d8c54b2b83744fb51b7ee89e31bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldItem: {fileID: 0}
 --- !u!114 &114970459288258118
 MonoBehaviour:
   m_ObjectHideFlags: 1
