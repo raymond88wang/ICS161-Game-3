@@ -23,8 +23,9 @@ GameObject:
   - component: {fileID: 136980173965588980}
   - component: {fileID: 23813966365230400}
   - component: {fileID: 143023289251387534}
-  - component: {fileID: 114885551438763252}
   - component: {fileID: 54644535950586354}
+  - component: {fileID: 114885551438763252}
+  - component: {fileID: 114493152499861882}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -209,6 +210,18 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1309654085818582}
   m_Enabled: 1
+--- !u!114 &114493152499861882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169542933764228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 690d8c54b2b83744fb51b7ee89e31bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldItem: {fileID: 0}
 --- !u!114 &114885551438763252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,7 +237,6 @@ MonoBehaviour:
   jumpSpeed: 8
   gravity: 20
   c: {fileID: 143023289251387534}
-  heldItem: {fileID: 0}
 --- !u!114 &114970459288258118
 MonoBehaviour:
   m_ObjectHideFlags: 1
