@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
-using UnityEngine.Networking;
 using System.Collections;
 
-public class PlayerController : NetworkBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float speed = 6.0F;
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
     public CharacterController c;
+
     private Vector3 moveDirection = Vector3.zero;
+
+    
 
     void Start()
     {
@@ -17,28 +19,17 @@ public class PlayerController : NetworkBehaviour
 
     void Update()
     {
-        if (!isLocalPlayer)
-            return;
-        else
+        if (c.isGrounded)
         {
-            if (c.isGrounded)
-            {
-                moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-                moveDirection = transform.TransformDirection(moveDirection);
-                moveDirection *= speed;
-                if (Input.GetButton("Jump"))
-                    moveDirection.y = jumpSpeed;
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            moveDirection = transform.TransformDirection(moveDirection);
+            moveDirection *= speed;
+            if (Input.GetButton("Jump"))
+                moveDirection.y = jumpSpeed;
 
-            }
-            moveDirection.y -= gravity * Time.deltaTime;
-            c.Move(moveDirection * Time.deltaTime);
         }
+        moveDirection.y -= gravity * Time.deltaTime;
+        c.Move(moveDirection * Time.deltaTime);
     }
 
-    /*
-    public override void OnStartLocalPlayer()
-    {
-        base.OnStartLocalPlayer();
-    }
-    */
 }

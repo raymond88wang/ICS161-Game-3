@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Player1
   - Player2
+  - item
+  - hold slot
+  - camera
+  - lock
   layers:
   - Default
   - TransparentFX
@@ -15,9 +19,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Held Item
+  - Surfaces
+  - Player
   - 
   - 
   - 

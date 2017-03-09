@@ -84,12 +84,10 @@ public class PlayerControllerTester : MonoBehaviour
 
     private void PickUpItem(GameObject item)
     {
-        PlayerStats.item = item;
     }
 
     private void DropItem()
     {
-        PlayerStats.item = null;
     }
 
     IEnumerator RotateArmDown(Vector3 byAngles, float inTime)
