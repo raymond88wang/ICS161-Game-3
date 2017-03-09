@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowShooting : MonoBehaviour {
+public class ArrowShootingController : MonoBehaviour {
 
     public GameObject prefabArrow;
     public GameObject spawnPoint;
@@ -11,12 +11,12 @@ public class ArrowShooting : MonoBehaviour {
 
     private void Start()
     {
-        
+
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("B"))
         {
             GameObject Temp_Arrow = Instantiate(prefabArrow, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
             Rigidbody Temp_rb = Temp_Arrow.GetComponent<Rigidbody>();
@@ -24,5 +24,6 @@ public class ArrowShooting : MonoBehaviour {
 
             Destroy(Temp_Arrow, 7);
         }
+
     }
 }

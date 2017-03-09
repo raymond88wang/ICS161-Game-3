@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PickUp : MonoBehaviour {
+public class ControllerPickUp : MonoBehaviour
+{
     private GameObject itemToPickUp;
     private GameObject holdSlot;
     private GameObject camera;
@@ -13,27 +14,27 @@ public class PickUp : MonoBehaviour {
     public Text heldItem;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-        holdSlot = GameObject.FindGameObjectWithTag("hold slot");
-        camera = GameObject.FindGameObjectWithTag("camera");
+        holdSlot = GameObject.FindGameObjectWithTag("hold slot 2");
+        camera = GameObject.FindGameObjectWithTag("camera 2");
         HeldItemName = "None";
         UpdateHeldItemUI();
         isHoldingItem = false;
         canPickUp = false;
 
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
         if (HeldItemName.Equals("Bow"))
-            GetComponent<ArrowShooting>().enabled = true;
+            GetComponent<ArrowShootingController>().enabled = true;
         else
-            GetComponent<ArrowShooting>().enabled = false;
+            GetComponent<ArrowShootingController>().enabled = false;
 
         UpdateHeldItemUI();
-        if (Input.GetKeyDown("e"))
+        if (Input.GetButtonDown("X"))
         {
             if (canPickUp)
             {
