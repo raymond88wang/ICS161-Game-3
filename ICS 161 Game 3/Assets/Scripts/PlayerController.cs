@@ -21,10 +21,6 @@ public class PlayerController : MonoBehaviour
     {
         if (c.isGrounded)
         {
-            if(Input.GetAxis("Horizontal") != 0)
-            {
-                print("I HATE EVERYTHING");
-            }
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
