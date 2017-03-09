@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyMovement : MonoBehaviour {
+public class EnemyMovementController : MonoBehaviour {
 
     private Transform player1;
     private Transform player2;
@@ -30,8 +30,6 @@ public class EnemyMovement : MonoBehaviour {
             dist1 = Vector3.Distance(transform.position, player1.position);
             dist2 = Vector3.Distance(transform.position, player2.position);
             //dist2 = Vector3.Distance(transform.position, player2);
-
-
             if (dist1 <= dist2)
             {
                 nav.SetDestination(player1.position);

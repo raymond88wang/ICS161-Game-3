@@ -8,6 +8,8 @@ public class EnemyAttackController : MonoBehaviour
     PlayerStats player1Health;                  // Reference to the player's health.
     PlayerStats player2Health;
     private EnemyStats enemy;
+    public GameObject bullets, bulletsSpawnPoint;
+    public float bulletForce;
     private float timer = 0.0f;                     //Timer for counting up to the next attack
     private float distanceToPlayer1 = 0.0f;
     private float distanceToPlayer2 = 0.0f;
@@ -35,33 +37,33 @@ public class EnemyAttackController : MonoBehaviour
             {
                 if (distanceToPlayer1 <= distanceToPlayer2 && distanceToPlayer1 <= enemy.range)
                 {
-                    AttackPlayer(player1);
+                    RangeAttackPlayer(player1);
                 }
                 else if (distanceToPlayer2 <= enemy.range)
                 {
-                    AttackPlayer(player2);
+                    RangeAttackPlayer(player2);
                 }
             }
             else
             {
                 if(distanceToPlayer1 <= enemy.range && distanceToPlayer2 <= enemy.range)
                 {
-                    AttackPlayer(player1);
-                    AttackPlayer(player2);
+                    MeleeAttackPlayer(player1);
+                    MeleeAttackPlayer(player2);
                 }
                 else if (distanceToPlayer1 <= enemy.range)
                 {
-                    AttackPlayer(player1);
+                    MeleeAttackPlayer(player1);
                 }
                 else if (distanceToPlayer2 <= enemy.range)
                 {
-                    AttackPlayer(player2);
+                    MeleeAttackPlayer(player2);
                 }
             }
         }
     }
 
-    private void AttackPlayer(GameObject player)
+    private void MeleeAttackPlayer(GameObject player)
     {
         timer = 0f;
         print("Attacked player: " + player.tag);
@@ -70,6 +72,12 @@ public class EnemyAttackController : MonoBehaviour
         {
             player.GetComponent<PlayerStats>().TakeDamage(enemy.damage);
         }
+    }
+
+    private void RangeAttackPlayer(GameObject player)
+    {
+        timer = 0f;
+        print("Attacked player: " + player.tag);
     }
 
     private void OnDrawGizmosSelected()

@@ -24,10 +24,11 @@ GameObject:
   - component: {fileID: 23813966365230400}
   - component: {fileID: 143023289251387534}
   - component: {fileID: 54644535950586354}
-  - component: {fileID: 114885551438763252}
   - component: {fileID: 114936667864632206}
   - component: {fileID: 114640893550043314}
   - component: {fileID: 114312169132825670}
+  - component: {fileID: 114646589359241048}
+  - component: {fileID: 114002699938729664}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player1
@@ -125,11 +126,11 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.5
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 70
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -212,6 +213,17 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1309654085818582}
   m_Enabled: 1
+--- !u!114 &114002699938729664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169542933764228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dca9e28f168e5c84ab81013f7c36eab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114312169132825670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -241,9 +253,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
+  stamina: 100
+  defense: 5
+  damage: 0
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
---- !u!114 &114885551438763252
+--- !u!114 &114646589359241048
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -251,13 +266,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1169542933764228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d9593dc6b3f43e49b3bff388d54165a, type: 3}
+  m_Script: {fileID: 11500000, guid: 629aba274eac2f845821ef776234095a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  jumpSpeed: 8
+  walkSpeed: 3
+  runSpeed: 6
+  jumpSpeed: 4
   gravity: 20
-  c: {fileID: 143023289251387534}
 --- !u!114 &114936667864632206
 MonoBehaviour:
   m_ObjectHideFlags: 1

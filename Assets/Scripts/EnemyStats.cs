@@ -10,13 +10,13 @@ public class EnemyStats : MonoBehaviour {
     public float defense = 5.0f;
     public float damage = 5.0f;
     public float range = 2.5f;
-    public float attackCooldownTime = 2.0f;
+    public float attackCooldownTime = 1.0f;
     public bool isRanged = false;
 
     void Awake()
     {
         currentHealth = startingHealth;
-        isRanged = this.gameObject.GetComponent<ArrowShooting>() != null ? true : false;
+        isRanged = this.gameObject.GetComponent<ArrowShootingController>() != null ? true : false;
     }
 
     public void TakeDamage(float damageAmount)

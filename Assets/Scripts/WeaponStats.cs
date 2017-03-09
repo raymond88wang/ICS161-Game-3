@@ -1,8 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WeaponStats : MonoBehaviour {
-    private float range = 2.0F;
-    private float damage = 10.0F;
+    public float range = 0.0F;
+    public float damage = 10.0F;
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<EnemyStats>().TakeDamage(damage);
+        }
+        else if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2"))
+        {
+            collision.gameObject.GetComponent<PlayerStats>().TakeDamage(damage);
+        }
+    }
 }

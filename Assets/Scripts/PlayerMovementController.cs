@@ -1,14 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour {
 
-    private CharacterController player;
-    public float speed = 6.0F;
-    public float jumpSpeed = 8.0F;
+    public float walkSpeed = 3.0F;
+    public float runSpeed = 6.0F;
+    public float jumpSpeed = 4.0F;
     public float gravity = 20.0F;
     private Vector3 moveDirection = Vector3.zero;
+    private CharacterController player;
 
     private void Start()
     {
@@ -24,15 +23,24 @@ public class PlayerMovementController : MonoBehaviour {
 
         if (player.isGrounded)
         {
-            moveDirection = new Vector3(Input.GetAxis("LeftJoystickX"), 0, Input.GetAxis("LeftJoystickY") * -1);
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *= speed;
-            if (Input.GetButtonDown("A"))
+            moveDirection *= walkSpeed;
+            //Jump
+            if (Input.GetKey(KeyCode.Space))
                 moveDirection.y = jumpSpeed;
+            //Sprint
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                moveDirection *= runSpeed;
+            }
+            else
+            {
+                moveDirection *= walkSpeed;
+            }
 
         }
         moveDirection.y -= gravity * Time.deltaTime;
         player.Move(moveDirection * Time.deltaTime);
-       
     }
 }
