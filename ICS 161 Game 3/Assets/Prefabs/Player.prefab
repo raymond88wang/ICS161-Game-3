@@ -27,8 +27,8 @@ GameObject:
   - component: {fileID: 114885551438763252}
   - component: {fileID: 114936667864632206}
   - component: {fileID: 114640893550043314}
-  - component: {fileID: 114430366615327442}
-  m_Layer: 0
+  - component: {fileID: 114312169132825670}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player1
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 124093735794504992}
   - component: {fileID: 81198411948555502}
   - component: {fileID: 114970459288258118}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Camera
   m_TagString: camera
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4633545636647438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hold Slot
   m_TagString: hold slot
   m_Icon: {fileID: 0}
@@ -104,13 +104,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585034185682038}
-  m_LocalRotation: {x: -0.06289886, y: -0, z: -0, w: 0.99801993}
-  m_LocalPosition: {x: 1, y: -0.29651916, z: 0.76326686}
-  m_LocalScale: {x: 0.5000007, y: 0.5, z: 0.5000007}
+  m_LocalRotation: {x: 0.000000007450581, y: 0.050969638, z: 0.0000000011641532, w: 0.99870026}
+  m_LocalPosition: {x: 0.95, y: 0.22, z: 0.66}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4246596787385080}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 5.8430004, z: 0}
 --- !u!20 &20772512447186140
 Camera:
   m_ObjectHideFlags: 1
@@ -212,21 +212,22 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1309654085818582}
   m_Enabled: 1
---- !u!114 &114430366615327442
+--- !u!114 &114312169132825670
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1169542933764228}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd01755e2ddef3a458cfbeb08f95205f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabArrow: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  camDirection: {fileID: 0}
-  arrowForce: 0
+  prefabArrow: {fileID: 1337215094618800, guid: dc19a78b4f0c73e44b6e9d3a4e099465,
+    type: 2}
+  spawnPoint: {fileID: 1585034185682038}
+  camDirection: {fileID: 4246596787385080}
+  arrowForce: 2000
 --- !u!114 &114640893550043314
 MonoBehaviour:
   m_ObjectHideFlags: 1
