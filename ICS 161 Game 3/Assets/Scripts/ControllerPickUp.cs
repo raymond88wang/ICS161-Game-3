@@ -16,8 +16,8 @@ public class ControllerPickUp : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        holdSlot = GameObject.FindGameObjectWithTag("hold slot");
-        camera = GameObject.FindGameObjectWithTag("camera");
+        holdSlot = GameObject.FindGameObjectWithTag("hold slot 2");
+        camera = GameObject.FindGameObjectWithTag("camera 2");
         HeldItemName = "None";
         UpdateHeldItemUI();
         isHoldingItem = false;
@@ -29,12 +29,12 @@ public class ControllerPickUp : MonoBehaviour
     void Update()
     {
         if (HeldItemName.Equals("Bow"))
-            GetComponent<ArrowShooting>().enabled = true;
+            GetComponent<ArrowShootingController>().enabled = true;
         else
-            GetComponent<ArrowShooting>().enabled = false;
+            GetComponent<ArrowShootingController>().enabled = false;
 
         UpdateHeldItemUI();
-        if (Input.GetKeyDown("X"))
+        if (Input.GetButtonDown("X"))
         {
             if (canPickUp)
             {
@@ -83,7 +83,7 @@ public class ControllerPickUp : MonoBehaviour
 
     void UpdateHeldItemUI()
     {
-        //heldItem.text = "Holding: " + HeldItemName + "\nCan pick up: " + canPickUp + "\nIs holding item: " + isHoldingItem;
+        heldItem.text = "Holding: " + HeldItemName + "\nCan pick up: " + canPickUp + "\nIs holding item: " + isHoldingItem;
     }
 
     public string getHeldItemName()

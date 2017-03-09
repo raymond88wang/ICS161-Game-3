@@ -13,6 +13,7 @@ public class ArrowsDamageEnemy : MonoBehaviour {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(arrowDamage);
             //Destroy(gameObject, 0); // can fix later
         }
+
     }
 }
 
