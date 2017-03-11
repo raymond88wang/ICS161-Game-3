@@ -1,25 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour {
 
     private Transform player1;
     private Transform player2;
+    public EnemyHealth enemy;
+    //private EnemyHealth enemy;
+    private NavMeshAgent nav = null;
 
-    private NavMeshAgent nav;
-
-    private float dist1;
-    private float dist2;
+    private float dist1 = 0.0f;
+    private float dist2 = 0.0f;
+    private float bodyRotateSpeed = 5.0f;
     private bool spotted = false;
 
-    void Awake()
+    private void Awake()
     {
         player1 = GameObject.FindGameObjectWithTag("Player1").transform;
         player2 = GameObject.FindGameObjectWithTag("Player2").transform;
-
-        nav = GetComponent<NavMeshAgent>();
+        enemy = GetComponent<EnemyHealth>();
     }
 
     private void Update()
@@ -29,23 +28,35 @@ public class EnemyMovement : MonoBehaviour {
         {
             dist1 = Vector3.Distance(transform.position, player1.position);
             dist2 = Vector3.Distance(transform.position, player2.position);
-            //dist2 = Vector3.Distance(transform.position, player2);
-
-
-            if (dist1 <= dist2)
+            if (!enemy.isRanged)
             {
-                nav.SetDestination(player1.position);
+                if (dist1 <= dist2)
+                {
+                    nav.SetDestination(player1.position);
+                }
+                else
+                {
+                    nav.SetDestination(player2.position);
+                }
             }
             else
             {
-                nav.SetDestination(player2.position);
-                //nav.SetDestination(player2);
-
+                if (dist1 <= dist2)
+                {
+                    RotateTowards(player1);
+                }
+                else
+                {
+                    RotateTowards(player2);
+                }
             }
         }
         else
         {
-            nav.SetDestination(transform.position);
+            if (nav != null)
+            {
+                nav.SetDestination(transform.position);
+            }
         }
     }
 
@@ -56,15 +67,15 @@ public class EnemyMovement : MonoBehaviour {
         Vector3 direction1 = player1.position - transform.position;
         Vector3 direction2 = player2.position - transform.position;
 
-        //Vector3 direction2 = player2 - transform.position;
         Debug.DrawRay(transform.position, direction1);
         Debug.DrawRay(transform.position, direction2);
 
-        if (Physics.Raycast(transform.position, direction1, out hit, 20) && (hit.collider.gameObject.CompareTag("Player1") || hit.collider.gameObject.CompareTag("Player2")))
+        if (Physics.Raycast(transform.position, direction1, out hit, enemy.lookRange) && 
+            (hit.collider.gameObject.CompareTag("Player1") || hit.collider.gameObject.CompareTag("Player2")))
         {
             spotted = true;
         }
-        else if (Physics.Raycast(transform.position, direction2, out hit, 20) && (hit.collider.gameObject.CompareTag("Player1") || hit.collider.gameObject.CompareTag("Player2")))
+        else if (Physics.Raycast(transform.position, direction2, out hit, enemy.lookRange) && (hit.collider.gameObject.CompareTag("Player1") || hit.collider.gameObject.CompareTag("Player2")))
         {
             spotted = true;
         }
@@ -72,5 +83,19 @@ public class EnemyMovement : MonoBehaviour {
         {
             spotted = false;
         }
+    }
+
+    private void RotateTowards(Transform target)
+    {
+        Vector3 relativePosition = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(relativePosition);
+        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * bodyRotateSpeed).eulerAngles;
+        transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, enemy.lookRange);
     }
 }

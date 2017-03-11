@@ -1,28 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ArrowShooting : MonoBehaviour {
-
+public class EnemyArrowShootingController : MonoBehaviour {
     public GameObject prefabArrow;
     public GameObject spawnPoint;
-    public Transform camDirection;
     public float arrowForce;
+    public float timer = 0.0f;
+    public float attackCooldownTime = 1.0f;
 
-    private void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+    void Update () {
+        timer += Time.deltaTime;
+        if (timer >= attackCooldownTime)
         {
             GameObject Temp_Arrow = Instantiate(prefabArrow, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
             Rigidbody Temp_rb = Temp_Arrow.GetComponent<Rigidbody>();
-            Temp_rb.AddForce(camDirection.transform.forward * arrowForce);
-
+            Temp_rb.AddForce(transform.forward * arrowForce);
             Destroy(Temp_Arrow, 7);
+            timer = 0.0f;
         }
     }
 }

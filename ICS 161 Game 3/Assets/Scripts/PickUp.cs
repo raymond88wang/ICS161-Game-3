@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class PickUp : MonoBehaviour {
@@ -28,9 +26,19 @@ public class PickUp : MonoBehaviour {
 	void Update ()
     {
         if (HeldItemName.Equals("Bow"))
-            GetComponent<ArrowShooting>().enabled = true;
+        {
+            if (GetComponent<ArrowShootingController>() != null)
+                GetComponent<ArrowShootingController>().enabled = true;
+            if (GetComponent<ControllerArrowShootingController>() != null)
+                GetComponent<ControllerArrowShootingController>().enabled = true;
+        }
         else
-            GetComponent<ArrowShooting>().enabled = false;
+        {
+            if (GetComponent<ArrowShootingController>() != null)
+                GetComponent<ArrowShootingController>().enabled = false;
+            if (GetComponent<ControllerArrowShootingController>() != null)
+                GetComponent<ControllerArrowShootingController>().enabled = false;
+        }
 
         UpdateHeldItemUI();
         if (Input.GetKeyDown("e"))
