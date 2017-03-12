@@ -5,7 +5,7 @@ public class ControllerArrowShootingController : MonoBehaviour {
     public GameObject prefabArrow;
     public GameObject spawnPoint;
     public Transform camDirection;
-    public float arrowForce = 1000.0f;
+    public float arrowForce;
 
     private void Start()
     {
@@ -14,8 +14,9 @@ public class ControllerArrowShootingController : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKey("joystick 1 button 0"))  //can add xbox control in or statement
+        if (Input.GetButtonDown("B")) 
         {
+            spawnPoint = this.gameObject.transform.Find("ArrowSpawn").gameObject;
             GameObject Temp_Arrow = Instantiate(prefabArrow, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
             Rigidbody Temp_rb = Temp_Arrow.GetComponent<Rigidbody>();
             Temp_rb.AddForce(camDirection.transform.forward * arrowForce);
