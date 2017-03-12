@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 143486254469421116}
   - component: {fileID: 54353932493877626}
   - component: {fileID: 114358313075709586}
+  - component: {fileID: 114458332824430156}
   m_Layer: 10
   m_Name: Player2
   m_TagString: Player2
@@ -74,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1938247284087882}
   m_LocalRotation: {x: -0, y: -0.68182564, z: -0, w: -0.73151475}
-  m_LocalPosition: {x: 30.78, y: 1, z: 29}
+  m_LocalPosition: {x: 31.4, y: 1, z: 28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4968176329021148}
@@ -222,12 +223,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
+  damageImage: {fileID: 0}
+  currentHealthBar: {fileID: 0}
   flashSpeed: 5
-  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
+  flashColour: {r: 1, g: 0, b: 0, a: 0.197}
   walkSpeed: 6
   sprintSpeed: 12
   jumpSpeed: 8
   deathMessage: {fileID: 0}
+    type: 2}
+  spawnPoint: {fileID: 1455218288040712, guid: 7ec0e6b73a0e5cb44ada820c4b3e521a, type: 2}
+  camDirection: {fileID: 4968176329021148}
+  arrowForce: 1500
+--- !u!114 &114547223805982706
 --- !u!114 &114933452038429062
 MonoBehaviour:
   m_ObjectHideFlags: 1
