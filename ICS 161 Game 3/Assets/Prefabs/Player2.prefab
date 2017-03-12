@@ -60,10 +60,10 @@ GameObject:
   - component: {fileID: 143486254469421116}
   - component: {fileID: 54353932493877626}
   - component: {fileID: 114358313075709586}
-  - component: {fileID: 114568084436361550}
   - component: {fileID: 114848726232455108}
   - component: {fileID: 114393856274020604}
   - component: {fileID: 114547223805982706}
+  - component: {fileID: 114458332824430156}
   m_Layer: 10
   m_Name: Player2
   m_TagString: Player2
@@ -78,7 +78,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1938247284087882}
   m_LocalRotation: {x: -0, y: -0.68182564, z: -0, w: -0.73151475}
-  m_LocalPosition: {x: 31.84, y: 1, z: 21.44}
+  m_LocalPosition: {x: 31.4, y: 1, z: 28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4968176329021148}
@@ -226,8 +226,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
+  damageImage: {fileID: 0}
+  currentHealthBar: {fileID: 0}
   flashSpeed: 5
-  flashColour: {r: 1, g: 0, b: 0, a: 0.1}
+  flashColour: {r: 1, g: 0, b: 0, a: 0.197}
   deathMessage: {fileID: 0}
 --- !u!114 &114393856274020604
 MonoBehaviour:
@@ -244,6 +246,22 @@ MonoBehaviour:
   speed: 6
   jumpSpeed: 8
   gravity: 20
+--- !u!114 &114458332824430156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1938247284087882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a322f3902fd2b248a21af09e892b0fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabArrow: {fileID: 1337215094618800, guid: dc19a78b4f0c73e44b6e9d3a4e099465,
+    type: 2}
+  spawnPoint: {fileID: 1455218288040712, guid: 7ec0e6b73a0e5cb44ada820c4b3e521a, type: 2}
+  camDirection: {fileID: 4968176329021148}
+  arrowForce: 1500
 --- !u!114 &114547223805982706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,22 +273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e7c7848275c2a45bfcbb7fc138a376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114568084436361550
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1938247284087882}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7244e77c42f3d2c42ac26a241bc868e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabArrow: {fileID: 1337215094618800, guid: dc19a78b4f0c73e44b6e9d3a4e099465,
-    type: 2}
-  spawnPoint: {fileID: 1455218288040712, guid: 7ec0e6b73a0e5cb44ada820c4b3e521a, type: 2}
-  camDirection: {fileID: 4968176329021148}
-  arrowForce: 2000
 --- !u!114 &114848726232455108
 MonoBehaviour:
   m_ObjectHideFlags: 1

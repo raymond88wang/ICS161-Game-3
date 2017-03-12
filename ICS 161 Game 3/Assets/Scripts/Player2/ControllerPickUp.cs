@@ -29,9 +29,9 @@ public class ControllerPickUp : MonoBehaviour
     void Update()
     {
         if (HeldItemName.Equals("Bow"))
-            GetComponent<ArrowShootingController>().enabled = true;
+            GetComponent<ControllerArrowShootingController>().enabled = true;
         else
-            GetComponent<ArrowShootingController>().enabled = false;
+            GetComponent<ControllerArrowShootingController>().enabled = false;
 
         UpdateHeldItemUI();
         if (Input.GetButtonDown("X"))
