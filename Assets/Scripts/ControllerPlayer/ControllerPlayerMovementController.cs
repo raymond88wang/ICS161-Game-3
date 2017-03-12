@@ -5,7 +5,6 @@ public class ControllerPlayerMovementController : MonoBehaviour {
     public float gravity = 20.0F;
     private CharacterController character;
     public PlayerHealth player;
-    //private PlayerHealth player;
     private Vector3 moveDirection = Vector3.zero;
 
     private void Awake()
@@ -18,12 +17,11 @@ public class ControllerPlayerMovementController : MonoBehaviour {
     {
         if (character.isGrounded)
         {
-            moveDirection = new Vector3(Input.GetAxis("LeftJoystickX"), 0, Input.GetAxis("LeftJoystickY"));
+            moveDirection = new Vector3(Input.GetAxis("LeftJoystickX"), 0, Input.GetAxis("LeftJoystickY") * -1);
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= player.walkSpeed;
             //Jump
-            //if (Input.GetButtonDown("A"))
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetButtonDown("A"))
                 moveDirection.y = player.jumpSpeed;
             //Sprint
             //if (Input.GetButtonDown("LeftJoystick8"))

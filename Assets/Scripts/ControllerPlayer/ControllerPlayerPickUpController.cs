@@ -6,16 +6,18 @@ public class ControllerPlayerPickUpController : MonoBehaviour
     private GameObject itemToPickUp;
     public GameObject heldItem = null;
     public GameObject holdSlot;
+    private string HeldItemName;
     public Text heldItemText;
 
     private void Start()
     {
+        HeldItemName = "None";
         UpdateHeldItemUI();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown("f"))
+        if (Input.GetButtonDown("X"))
         {
             if (heldItem == null)
             {
@@ -25,12 +27,13 @@ public class ControllerPlayerPickUpController : MonoBehaviour
                 heldItem.transform.rotation = holdSlot.transform.rotation;
                 heldItem.GetComponent<Rigidbody>().isKinematic = true;
                 heldItem.GetComponent<SphereCollider>().enabled = false;
+                HeldItemName = heldItem.name;
                 if (heldItem.name.Equals("Bow"))
                 {
                     //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
                     itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
                     itemToPickUp.transform.localPosition = new Vector3(-.5f, 0, 0);
-                    GetComponent<PlayerArrowShootingController>().enabled = true;
+                    GetComponent<ControllerPlayerArrowShootingController>().enabled = true;
                 }
                 else if (heldItem.name.Equals("Key"))
                 {
@@ -44,8 +47,9 @@ public class ControllerPlayerPickUpController : MonoBehaviour
                 heldItem.GetComponent<Rigidbody>().isKinematic = false;
                 heldItem.GetComponent<SphereCollider>().enabled = true;
                 heldItem.transform.parent = null;
+                HeldItemName = "None";
                 Debug.Log("Dropped: " + heldItem.name);
-                GetComponent<PlayerArrowShootingController>().enabled = false;
+                GetComponent<ControllerPlayerArrowShootingController>().enabled = false;
                 heldItem = null;
             }
             UpdateHeldItemUI();
@@ -69,5 +73,9 @@ public class ControllerPlayerPickUpController : MonoBehaviour
     void UpdateHeldItemUI()
     {
         heldItemText.text = "Holding: " + (heldItem == null ? "None" : heldItem.name) + "\nCan pick up: " + (heldItem == null) + "\nIs holding item: " + (heldItem == null);
+    }
+    public string getHeldItemName()
+    {
+        return HeldItemName;
     }
 }

@@ -17,7 +17,7 @@ public class ControllerUnlockController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canUnlock && Input.GetMouseButtonDown(0))
+        if (canUnlock && Input.GetButtonDown("B"))
         {
             Debug.Log(Lock.transform.parent.parent);
             if (Lock.transform.parent.parent.parent != null && Lock.transform.parent.parent.parent.CompareTag("double doors"))
@@ -39,7 +39,7 @@ public class ControllerUnlockController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "lock" && GetComponent<ControllerPlayerPickUpController>().name.Equals("Key"))
+        if (other.gameObject.tag == "lock" && GetComponent<ControllerPlayerPickUpController>().getHeldItemName().Equals("Key"))
         {
             canUnlock = true;
             Lock = other.gameObject;
