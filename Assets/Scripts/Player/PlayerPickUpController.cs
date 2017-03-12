@@ -31,6 +31,11 @@ public class PlayerPickUpController : MonoBehaviour {
                     itemToPickUp.transform.localPosition = new Vector3(-.5f, 0,0);
                     GetComponent<PlayerArrowShootingController>().enabled = true;
                 }
+                else if (heldItem.name.Equals("Key"))
+                {
+                    itemToPickUp.transform.localEulerAngles = new Vector3(-121f, -19f, 49.33f);
+                    itemToPickUp.transform.localPosition = new Vector3(0.34f, 0.54f, 1.27f);
+                }
                 Debug.Log("Picked up: " + heldItem.name);
             }
             else
@@ -71,9 +76,4 @@ public class PlayerPickUpController : MonoBehaviour {
     {
         heldItemText.text = "Holding: " + (heldItem == null ? "None" : heldItem.name) + "\nCan pick up: " + (heldItem == null) + "\nIs holding item: " + (heldItem == null);
     }
-
-    //public string getHeldItemName()
-    //{
-    //    return HeldItemName;
-    //}
 }
