@@ -24,14 +24,15 @@ GameObject:
   - component: {fileID: 23813966365230400}
   - component: {fileID: 143023289251387534}
   - component: {fileID: 54644535950586354}
-  - component: {fileID: 114936667864632206}
   - component: {fileID: 114640893550043314}
-  - component: {fileID: 114312169132825670}
-  - component: {fileID: 114646589359241048}
-  - component: {fileID: 114002699938729664}
+  - component: {fileID: 114986747193966604}
+  - component: {fileID: 114781947686722440}
+  - component: {fileID: 114440304783595800}
+  - component: {fileID: 114985402676158070}
+  - component: {fileID: 114164628025384748}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Player1
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,7 +49,7 @@ GameObject:
   - component: {fileID: 92441872471733604}
   - component: {fileID: 124093735794504992}
   - component: {fileID: 81198411948555502}
-  - component: {fileID: 114970459288258118}
+  - component: {fileID: 114773517276333768}
   m_Layer: 10
   m_Name: Camera
   m_TagString: camera
@@ -66,7 +67,7 @@ GameObject:
   - component: {fileID: 4633545636647438}
   m_Layer: 10
   m_Name: Hold Slot
-  m_TagString: hold slot
+  m_TagString: hold slot 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,8 +125,8 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
+    x: 0.5
+    y: 1
     width: 0.5
     height: 1
   near clip plane: 0.3
@@ -205,7 +206,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1309654085818582}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &92441872471733604
 Behaviour:
   m_ObjectHideFlags: 1
@@ -213,7 +214,7 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1309654085818582}
   m_Enabled: 1
---- !u!114 &114002699938729664
+--- !u!114 &114164628025384748
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -224,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dca9e28f168e5c84ab81013f7c36eab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114312169132825670
+--- !u!114 &114440304783595800
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -232,14 +233,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1169542933764228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd01755e2ddef3a458cfbeb08f95205f, type: 3}
+  m_Script: {fileID: 11500000, guid: 629aba274eac2f845821ef776234095a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabArrow: {fileID: 1337215094618800, guid: dc19a78b4f0c73e44b6e9d3a4e099465,
-    type: 2}
-  spawnPoint: {fileID: 1585034185682038}
-  camDirection: {fileID: 4246596787385080}
-  arrowForce: 2000
+  controller: {fileID: 143023289251387534}
+  speed: 6
+  jumpSpeed: 8
+  gravity: 20
 --- !u!114 &114640893550043314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -253,39 +253,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
-  stamina: 100
-  defense: 5
-  damage: 0
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
---- !u!114 &114646589359241048
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1169542933764228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 629aba274eac2f845821ef776234095a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 3
-  runSpeed: 6
-  jumpSpeed: 4
-  gravity: 20
---- !u!114 &114936667864632206
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1169542933764228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 690d8c54b2b83744fb51b7ee89e31bf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heldItem: {fileID: 0}
---- !u!114 &114970459288258118
+--- !u!114 &114773517276333768
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -293,7 +263,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1309654085818582}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c495b8dd620da4ea8f5bb4a72c8ca1, type: 3}
+  m_Script: {fileID: 11500000, guid: 5343453e44a3aa7488f27effa252ca64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   clampInDegrees: {x: 360, y: 180}
@@ -303,6 +273,45 @@ MonoBehaviour:
   targetDirection: {x: 0, y: 0}
   targetCharacterDirection: {x: 0, y: 0}
   characterBody: {fileID: 1169542933764228}
+--- !u!114 &114781947686722440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169542933764228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f8ef6bb97229c44987d48701e899f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldItem: {fileID: 0}
+--- !u!114 &114985402676158070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169542933764228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3e7c7848275c2a45bfcbb7fc138a376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114986747193966604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169542933764228}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7244e77c42f3d2c42ac26a241bc868e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabArrow: {fileID: 1337215094618800, guid: dc19a78b4f0c73e44b6e9d3a4e099465,
+    type: 2}
+  spawnPoint: {fileID: 1455218288040712, guid: 7ec0e6b73a0e5cb44ada820c4b3e521a, type: 2}
+  camDirection: {fileID: 4246596787385080}
+  arrowForce: 1500
 --- !u!124 &124093735794504992
 Behaviour:
   m_ObjectHideFlags: 1
