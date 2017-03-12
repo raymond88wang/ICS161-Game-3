@@ -18,46 +18,45 @@ public class PlayerPickUpController : MonoBehaviour {
     {
         if (Input.GetKeyDown("e"))
         {
-            if (itemToPickUp != null)
+            
+            if (heldItem == null)
             {
-                if (heldItem == null)
+                heldItem = itemToPickUp;
+                heldItem.transform.parent = holdSlot.transform;
+                heldItem.transform.position = holdSlot.transform.position;
+                heldItem.transform.rotation = holdSlot.transform.rotation;
+                heldItem.GetComponent<Rigidbody>().isKinematic = true;
+                heldItem.GetComponent<SphereCollider>().enabled = false;
+                HeldItemName = heldItem.name;
+                if (heldItem.name.Equals("Bow"))
                 {
-                    heldItem = itemToPickUp;
-                    heldItem.transform.parent = holdSlot.transform;
-                    heldItem.transform.position = holdSlot.transform.position;
-                    heldItem.transform.rotation = holdSlot.transform.rotation;
-                    heldItem.GetComponent<Rigidbody>().isKinematic = true;
-                    heldItem.GetComponent<SphereCollider>().enabled = false;
-                    HeldItemName = heldItem.name;
-                    if (heldItem.name.Equals("Bow"))
-                    {
-                        //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
-                        itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
-                        itemToPickUp.transform.localPosition = new Vector3(-.5f, 0, 0);
-                        GetComponent<PlayerArrowShootingController>().enabled = true;
-                    }
-                    else if (heldItem.name.Equals("Key"))
-                    {
-                        itemToPickUp.transform.localEulerAngles = new Vector3(-121f, -19f, 49.33f);
-                        itemToPickUp.transform.localPosition = new Vector3(0.34f, 0.54f, 1.27f);
-                    }
-                    Debug.Log("Picked up: " + heldItem.name);
+                    //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
+                    itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
+                    itemToPickUp.transform.localPosition = new Vector3(-.5f, 0, 0);
+                    GetComponent<PlayerArrowShootingController>().enabled = true;
                 }
-                else
+                else if (heldItem.name.Equals("Key"))
                 {
-                    heldItem.GetComponent<Rigidbody>().isKinematic = false;
-                    heldItem.GetComponent<SphereCollider>().enabled = true;
-                    heldItem.transform.parent = null;
-                    HeldItemName = "None";
-                    Debug.Log("Dropped: " + heldItem.name);
-                    if (GetComponent<PlayerArrowShootingController>() != null)
-                    {
-                        GetComponent<PlayerArrowShootingController>().enabled = false;
-                    }
-                    heldItem = null;
+                    itemToPickUp.transform.localEulerAngles = new Vector3(-121f, -19f, 49.33f);
+                    itemToPickUp.transform.localPosition = new Vector3(0.34f, 0.54f, 1.27f);
                 }
-                UpdateHeldItemUI();
+                Debug.Log("Picked up: " + heldItem.name);
             }
+            else
+            {
+                heldItem.GetComponent<Rigidbody>().isKinematic = false;
+                heldItem.GetComponent<SphereCollider>().enabled = true;
+                heldItem.transform.parent = null;
+                HeldItemName = "None";
+                Debug.Log("Dropped: " + heldItem.name);
+                if (GetComponent<PlayerArrowShootingController>() != null)
+                {
+                    GetComponent<PlayerArrowShootingController>().enabled = false;
+                }
+                heldItem = null;
+            }
+            UpdateHeldItemUI();
+            
         }
     }
 
