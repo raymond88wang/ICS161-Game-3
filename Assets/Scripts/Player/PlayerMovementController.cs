@@ -4,8 +4,7 @@ public class PlayerMovementController : MonoBehaviour
 {
     public float gravity = 20.0F;
     private CharacterController character;
-    public PlayerHealth player;
-    //private PlayerHealth player;
+    private PlayerHealth player;
     private Vector3 moveDirection = Vector3.zero;
 
     private void Awake()

@@ -4,90 +4,74 @@ using UnityEngine.UI;
 public class ControllerPlayerPickUpController : MonoBehaviour
 {
     private GameObject itemToPickUp;
-    private GameObject holdSlot;
-    private GameObject camera;
-    private bool canPickUp;
-    private bool isHoldingItem;
-    private string HeldItemName;
-    public Text heldItem;
+    public GameObject heldItem = null;
+    public GameObject holdSlot;
+    public Text heldItemText;
 
-    // Use this for initialization
-    void Start()
+    private void Start()
     {
-        holdSlot = GameObject.FindGameObjectWithTag("hold slot 2");
-        camera = GameObject.FindGameObjectWithTag("camera 2");
-        HeldItemName = "None";
         UpdateHeldItemUI();
-        isHoldingItem = false;
-        canPickUp = false;
-
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        GetComponent<ControllerPlayerArrowShootingController>().enabled = HeldItemName.Equals("Bow");
-
-        UpdateHeldItemUI();
-        if (Input.GetButtonDown("X"))
+        if (Input.GetKeyDown("e"))
         {
-            if (canPickUp)
+            if (heldItem == null)
             {
-                canPickUp = false;
-                itemToPickUp.transform.parent = holdSlot.transform;
-                itemToPickUp.transform.position = holdSlot.transform.position;
-                itemToPickUp.GetComponent<Rigidbody>().isKinematic = true;
-                itemToPickUp.GetComponent<SphereCollider>().enabled = false;
-                HeldItemName = itemToPickUp.GetComponent<Item>().getName();
-                if (HeldItemName == "Bow")
+                heldItem = itemToPickUp;
+                heldItem.transform.parent = holdSlot.transform;
+                heldItem.transform.position = holdSlot.transform.position;
+                heldItem.transform.rotation = holdSlot.transform.rotation;
+                heldItem.GetComponent<Rigidbody>().isKinematic = true;
+                heldItem.GetComponent<SphereCollider>().enabled = false;
+                if (heldItem.name.Equals("Bow"))
                 {
+                    //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
                     itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
                     itemToPickUp.transform.localPosition = new Vector3(-.5f, 0, 0);
+                    GetComponent<PlayerArrowShootingController>().enabled = true;
                 }
-                isHoldingItem = true;
-                Debug.Log("Picked up an item");
-            }
-            else if (!canPickUp && isHoldingItem)
-            {
-                itemToPickUp.GetComponent<Rigidbody>().isKinematic = false;
-                itemToPickUp.GetComponent<SphereCollider>().enabled = true;
-                itemToPickUp.transform.parent = null;
-                itemToPickUp = null;
-                isHoldingItem = false;
-                HeldItemName = "None";
-                Debug.Log("Dropped an item");
+                Debug.Log("Picked up: " + heldItem.name);
             }
             else
-                ;
+            {
+                heldItem.GetComponent<Rigidbody>().isKinematic = false;
+                heldItem.GetComponent<SphereCollider>().enabled = true;
+                heldItem.transform.parent = null;
+                Debug.Log("Dropped: " + heldItem.name);
+                GetComponent<PlayerArrowShootingController>().enabled = false;
+                heldItem = null;
+            }
+            UpdateHeldItemUI();
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "item" && HeldItemName == "None")
+        if (heldItem == null && other.gameObject.CompareTag("item"))
         {
-            Debug.Log("Can pick up " + other.gameObject.GetComponent<Item>().getName());
-            canPickUp = true;
+            Debug.Log("Can pick up " + other.gameObject.name);
             itemToPickUp = other.gameObject;
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "item")
-        {
-            Debug.Log("Cannot pick up " + other.gameObject.GetComponent<Item>().getName());
-            canPickUp = false;
-        }
-    }
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "item")
+    //    {
+    //        Debug.Log("Cannot pick up " + other.gameObject.GetComponent<Item>().getName());
+    //        canPickUp = false;
+    //    }
+    //}
 
     void UpdateHeldItemUI()
     {
-        heldItem.text = "Holding: " + HeldItemName + "\nCan pick up: " + canPickUp + "\nIs holding item: " + isHoldingItem;
+        heldItemText.text = "Holding: " + (heldItem == null ? "None" : heldItem.name) + "\nCan pick up: " + (heldItem == null) + "\nIs holding item: " + (heldItem == null);
     }
 
-    public string getHeldItemName()
-    {
-        return HeldItemName;
-    }
+    //public string getHeldItemName()
+    //{
+    //    return HeldItemName;
+    //}
 }

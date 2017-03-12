@@ -39,7 +39,10 @@ public class PlayerPickUpController : MonoBehaviour {
                 heldItem.GetComponent<SphereCollider>().enabled = true;
                 heldItem.transform.parent = null;
                 Debug.Log("Dropped: " + heldItem.name);
-                GetComponent<PlayerArrowShootingController>().enabled = false;
+                if(GetComponent<PlayerArrowShootingController>() != null)
+                {
+                    GetComponent<PlayerArrowShootingController>().enabled = false;
+                }
                 heldItem = null;
             }
             UpdateHeldItemUI();

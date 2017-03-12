@@ -25,7 +25,7 @@ public class ControllerUnlockController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "lock" && GetComponent<ControllerPlayerPickUpController>().getHeldItemName() == "Key")
+        if (other.gameObject.tag == "lock" && GetComponent<PlayerPickUpController>().heldItem.name.Equals("Key"))
         {
             canUnlock = true;
             Lock = other.gameObject;

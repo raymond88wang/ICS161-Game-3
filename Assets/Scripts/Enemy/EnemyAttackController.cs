@@ -4,8 +4,6 @@ public class EnemyAttackController : MonoBehaviour
 {
     GameObject player1;                          // Reference to the player GameObject.
     GameObject player2;
-    PlayerHealth player1Health;                  // Reference to the player's health.
-    PlayerHealth player2Health;
     public EnemyHealth enemy;
     //private EnemyHealth enemy;
     private float timer = 0.0f;                     //Timer for counting up to the next attack
@@ -14,18 +12,16 @@ public class EnemyAttackController : MonoBehaviour
     public int damage = 5;
     private TargetLockController targetLock;
 
-    void Awake()
+    private void Awake()
     {
         // Setting up the references.
         player1 = GameObject.FindGameObjectWithTag("Player1");
         player2 = GameObject.FindGameObjectWithTag("Player2");
-        player1Health = player1.GetComponent<PlayerHealth>();
-        player2Health = player2.GetComponent<PlayerHealth>();
         enemy = GetComponent<EnemyHealth>();
         targetLock = GetComponent<TargetLockController>();
     }
 
-    void Update()
+    private void Update()
     {
         timer += Time.deltaTime;
 
@@ -43,17 +39,6 @@ public class EnemyAttackController : MonoBehaviour
                 {
                     GetComponent<EnemyArrowShootingController>().enabled = false;
                 }
-                //if (distanceToPlayer1 <= distanceToPlayer2 && distanceToPlayer1 <= enemy.attackRange)
-                //{
-                //    RangeAttackPlayer(player1);
-                //}
-                //else if (distanceToPlayer2 <= enemy.attackRange)
-                //{
-                //    RangeAttackPlayer(player2);
-                //}
-                //else
-                //{
-                //}
             }
             else
             {

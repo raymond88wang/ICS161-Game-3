@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 
 public class PlayerArrowShootingController : MonoBehaviour {
-
     public GameObject prefabArrow;
     public GameObject spawnPoint;
     public Transform camDirection;
@@ -9,10 +8,14 @@ public class PlayerArrowShootingController : MonoBehaviour {
     private float timer = 0.0f;
     private PlayerHealth player;
 
+    private void Awake()
+    {
+        player = GetComponent<PlayerHealth>();
+    }
+
     private void Start()
     {
         enabled = false;
-        player = GetComponent<PlayerHealth>();
     }
 
     private void Update()

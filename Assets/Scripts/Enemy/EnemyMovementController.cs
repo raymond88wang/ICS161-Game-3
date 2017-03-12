@@ -9,12 +9,7 @@ public class EnemyMovementController : MonoBehaviour {
     public EnemyHealth enemy;
     //private EnemyHealth enemy;
     private NavMeshAgent nav;
-
-    private float dist1 = 0.0f;
-    private float dist2 = 0.0f;
     private float bodyRotateSpeed = 5.0f;
-    private bool spotted = false;
-    public Vector3 hitSpot = Vector3.zero;
 
     private void Awake()
     {

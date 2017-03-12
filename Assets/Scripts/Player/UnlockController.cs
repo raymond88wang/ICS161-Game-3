@@ -40,5 +40,4 @@ public class UnlockController : MonoBehaviour {
             Debug.Log("Can unlock: " + canUnlock);
         }
     }
-
 }
