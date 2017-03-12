@@ -6,6 +6,7 @@ public class ControllerUnlock : MonoBehaviour
 {
 
     private bool canUnlock;
+    private bool playerUsedKey;
     private GameObject Lock;
 
     // Use this for initialization
@@ -19,8 +20,18 @@ public class ControllerUnlock : MonoBehaviour
     {
         if (canUnlock && Input.GetButtonDown("B"))
         {
-            Destroy(Lock.transform.parent.gameObject);
-            Destroy(Lock);
+            Debug.Log(Lock.transform.parent.parent);
+            if (Lock.transform.parent.parent != null)
+            { 
+                playerUsedKey = true;
+                Debug.Log("Player two used key: " + playerUsedKey);
+                Debug.Log("Player two used key on double door.");
+            }
+            else
+            {
+                Destroy(Lock.transform.parent.gameObject);
+                Destroy(Lock);
+            }
             canUnlock = false;
         }
 
@@ -44,6 +55,16 @@ public class ControllerUnlock : MonoBehaviour
             Lock = null;
             Debug.Log("Can unlock: " + canUnlock);
         }
+    }
+
+    public bool playerUsedKeyTrue()
+    {
+        return playerUsedKey;
+    }
+
+    public void resetPlayerUsedKeyBool()
+    {
+        playerUsedKey = false;
     }
 
 }

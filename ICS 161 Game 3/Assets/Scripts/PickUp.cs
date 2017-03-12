@@ -58,6 +58,11 @@ public class PickUp : MonoBehaviour {
                     itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
                     itemToPickUp.transform.localPosition = new Vector3(-.5f, 0,0);
                 }
+                else if (HeldItemName == "Key")
+                {
+                    itemToPickUp.transform.localEulerAngles = new Vector3(-121f, -19f, 49.33f);
+                    itemToPickUp.transform.localPosition = new Vector3(0.34f, 0.54f, 1.27f);
+                }
                 isHoldingItem = true;
                 Debug.Log("Picked up an item");
             }

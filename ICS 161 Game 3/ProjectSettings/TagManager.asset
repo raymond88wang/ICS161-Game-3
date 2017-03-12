@@ -14,6 +14,7 @@ TagManager:
   - hold slot 2
   - Enemy
   - arrow
+  - double doors
   layers:
   - Default
   - TransparentFX
