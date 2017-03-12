@@ -21,7 +21,7 @@ public class ControllerUnlock : MonoBehaviour
         if (canUnlock && Input.GetButtonDown("B"))
         {
             Debug.Log(Lock.transform.parent.parent);
-            if (Lock.transform.parent.parent != null)
+            if (Lock.transform.parent.parent.CompareTag("double doors"))
             { 
                 playerUsedKey = true;
                 Debug.Log("Player two used key: " + playerUsedKey);

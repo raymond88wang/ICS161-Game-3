@@ -19,7 +19,7 @@ public class Unlock : MonoBehaviour {
         if (canUnlock && Input.GetMouseButtonDown(0))
         {
             Debug.Log(Lock.transform.parent.parent);
-            if (Lock.transform.parent.parent != null)
+            if (Lock.transform.parent.parent.CompareTag("double doors"))
             {
                 playerUsedKey = true;
                 Debug.Log("Player two used key: " + playerUsedKey);
