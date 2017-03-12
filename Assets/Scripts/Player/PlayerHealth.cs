@@ -102,7 +102,6 @@ public class PlayerHealth : MonoBehaviour
     void updateHealth()
     {
         float ratio = (float)currentHealth / startingHealth;
-        print(ratio);
         currentHealthBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
     }
 }

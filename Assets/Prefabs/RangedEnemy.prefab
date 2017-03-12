@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 135748329322490698}
   - component: {fileID: 54631394168370446}
   - component: {fileID: 65630918821242012}
-  - component: {fileID: 114381772818818754}
   m_Layer: 8
   m_Name: Bow
   m_TagString: item
@@ -226,19 +225,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 114585445307313440}
-  hitSpot: {x: 0, y: 0, z: 0}
---- !u!114 &114381772818818754
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1248010773547482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3333903fe1bc07449805a43076e26b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Bow
 --- !u!114 &114443668088046720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,6 +255,7 @@ MonoBehaviour:
   attackRange: 30
   attackCooldownTime: 1
   isRanged: 1
+  door: {fileID: 0}
 --- !u!114 &114628778096370100
 MonoBehaviour:
   m_ObjectHideFlags: 1

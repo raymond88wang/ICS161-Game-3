@@ -16,41 +16,44 @@ public class PlayerPickUpController : MonoBehaviour {
     {
         if (Input.GetKeyDown("e"))
         {
-            if (heldItem == null)
+            if (itemToPickUp != null)
             {
-                heldItem = itemToPickUp;
-                heldItem.transform.parent = holdSlot.transform;
-                heldItem.transform.position = holdSlot.transform.position;
-                heldItem.transform.rotation = holdSlot.transform.rotation;
-                heldItem.GetComponent<Rigidbody>().isKinematic = true;
-                heldItem.GetComponent<SphereCollider>().enabled = false;
-                if(heldItem.name.Equals("Bow"))
+                if (heldItem == null)
                 {
-                    //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
-                    itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
-                    itemToPickUp.transform.localPosition = new Vector3(-.5f, 0,0);
-                    GetComponent<PlayerArrowShootingController>().enabled = true;
+                    heldItem = itemToPickUp;
+                    heldItem.transform.parent = holdSlot.transform;
+                    heldItem.transform.position = holdSlot.transform.position;
+                    heldItem.transform.rotation = holdSlot.transform.rotation;
+                    heldItem.GetComponent<Rigidbody>().isKinematic = true;
+                    heldItem.GetComponent<SphereCollider>().enabled = false;
+                    if (heldItem.name.Equals("Bow"))
+                    {
+                        //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
+                        itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
+                        itemToPickUp.transform.localPosition = new Vector3(-.5f, 0, 0);
+                        GetComponent<PlayerArrowShootingController>().enabled = true;
+                    }
+                    else if (heldItem.name.Equals("Key"))
+                    {
+                        itemToPickUp.transform.localEulerAngles = new Vector3(-121f, -19f, 49.33f);
+                        itemToPickUp.transform.localPosition = new Vector3(0.34f, 0.54f, 1.27f);
+                    }
+                    Debug.Log("Picked up: " + heldItem.name);
                 }
-                else if (heldItem.name.Equals("Key"))
+                else
                 {
-                    itemToPickUp.transform.localEulerAngles = new Vector3(-121f, -19f, 49.33f);
-                    itemToPickUp.transform.localPosition = new Vector3(0.34f, 0.54f, 1.27f);
+                    heldItem.GetComponent<Rigidbody>().isKinematic = false;
+                    heldItem.GetComponent<SphereCollider>().enabled = true;
+                    heldItem.transform.parent = null;
+                    Debug.Log("Dropped: " + heldItem.name);
+                    if (GetComponent<PlayerArrowShootingController>() != null)
+                    {
+                        GetComponent<PlayerArrowShootingController>().enabled = false;
+                    }
+                    heldItem = null;
                 }
-                Debug.Log("Picked up: " + heldItem.name);
+                UpdateHeldItemUI();
             }
-            else
-            {
-                heldItem.GetComponent<Rigidbody>().isKinematic = false;
-                heldItem.GetComponent<SphereCollider>().enabled = true;
-                heldItem.transform.parent = null;
-                Debug.Log("Dropped: " + heldItem.name);
-                if(GetComponent<PlayerArrowShootingController>() != null)
-                {
-                    GetComponent<PlayerArrowShootingController>().enabled = false;
-                }
-                heldItem = null;
-            }
-            UpdateHeldItemUI();
         }
     }
 
@@ -63,14 +66,10 @@ public class PlayerPickUpController : MonoBehaviour {
         }
     }
 
-    //void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.tag == "item")
-    //    {
-    //        Debug.Log("Cannot pick up " + other.gameObject.GetComponent<Item>().getName());
-    //        canPickUp = false;
-    //    }
-    //}
+    void OnTriggerExit(Collider other)
+    {
+        itemToPickUp = null;
+    }
 
     void UpdateHeldItemUI()
     {

@@ -15,7 +15,7 @@ public class ControllerPlayerPickUpController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("f"))
         {
             if (heldItem == null)
             {
@@ -61,14 +61,10 @@ public class ControllerPlayerPickUpController : MonoBehaviour
         }
     }
 
-    //void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.tag == "item")
-    //    {
-    //        Debug.Log("Cannot pick up " + other.gameObject.GetComponent<Item>().getName());
-    //        canPickUp = false;
-    //    }
-    //}
+    void OnTriggerExit(Collider other)
+    {
+        itemToPickUp = null;
+    }
 
     void UpdateHeldItemUI()
     {
