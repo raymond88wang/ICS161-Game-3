@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour {
     public float attackRange = 5.0f;
     public float attackCooldownTime = 1.0f;
     public bool isRanged = false;
+    public GameObject door = null;
 
     void Awake()
     {
@@ -26,6 +27,10 @@ public class EnemyHealth : MonoBehaviour {
 
     void Death()
     {
+        if(door != null)
+        {
+            door.GetComponent<OpenDoor2>().EnemyDied();
+        }
         Destroy(gameObject, 0);     
     }
 }
