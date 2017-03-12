@@ -73,16 +73,9 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ArrowCollisionController.cs" />
-    <Compile Include="Assets\Scripts\Barricade.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Camera\SimpleSmoothMouseLook.cs" />
     <Compile Include="Assets\Scripts\ControllerPlayer\ControllerPlayerArrowShootingController.cs" />
@@ -95,6 +88,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovementController.cs" />
     <Compile Include="Assets\Scripts\Enemy\TargetLockController.cs" />
+    <Compile Include="Assets\Scripts\LowerPlatform.cs" />
     <Compile Include="Assets\Scripts\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\OpenDoor2.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerArrowShootingController.cs" />
