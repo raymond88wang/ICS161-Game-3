@@ -5,6 +5,7 @@ public class EnemyAttackController : MonoBehaviour
     GameObject player1;                          // Reference to the player GameObject.
     GameObject player2;
     public EnemyHealth enemy;
+    private Animator anim;
     //private EnemyHealth enemy;
     private float timer = 0.0f;                     //Timer for counting up to the next attack
     private float distanceToPlayer1 = 0.0f;
@@ -19,6 +20,11 @@ public class EnemyAttackController : MonoBehaviour
         player2 = GameObject.FindGameObjectWithTag("Player2");
         enemy = GetComponent<EnemyHealth>();
         targetLock = GetComponent<TargetLockController>();
+
+        if (enemy.isRanged != true)
+        {
+            anim = GetComponentInChildren<Animator>();
+        }
     }
 
     private void Update()
@@ -63,6 +69,7 @@ public class EnemyAttackController : MonoBehaviour
     {
         timer = 0f;
         print("Attacked player: " + player.tag);
+        anim.SetTrigger("Swing");
 
         if (player.GetComponent<PlayerHealth>().currentHealth > 0)
         {
