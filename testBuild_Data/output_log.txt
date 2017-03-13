@@ -2,36 +2,187 @@ Initialize engine version: 5.5.1f1 (88d00a7498cd)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 960M (ID=0x139b)
-    Vendor:   NVIDIA
-    VRAM:     3072 MB
-    Driver:   21.21.13.6909
+    Renderer: AMD Radeon HD 7800 Series (ID=0x6819)
+    Vendor:   ATI
+    VRAM:     2026 MB
+    Driver:   21.19.407.0
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\tapgu\Documents\GitHub\ICS161-Game-3\ICS 161 Game 3\testBuild_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\tapgu\Documents\GitHub\ICS161-Game-3\ICS 161 Game 3\testBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\tapgu\Documents\GitHub\ICS161-Game-3\ICS 161 Game 3\testBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\tapgu\Documents\GitHub\ICS161-Game-3\ICS 161 Game 3\testBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\tapgu\Documents\GitHub\ICS161-Game-3\ICS 161 Game 3\testBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\tapgu\Documents\GitHub\ICS161-Game-3\ICS 161 Game 3\testBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\tapgu\Documents\GitHub\ICS161-Game-3\ICS 161 Game 3\testBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\tapgu\Documents\GitHub\ICS161-Game-3\ICS 161 Game 3\testBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\tapgu\Documents\GitHub\ICS161-Game-3\ICS 161 Game 3\testBuild_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\tapgu\Documents\GitHub\ICS161-Game-3\ICS 161 Game 3\testBuild_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.161 seconds
-Platform assembly: C:\Users\tapgu\Documents\GitHub\ICS161-Game-3\ICS 161 Game 3\testBuild_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\tapgu\Documents\GitHub\ICS161-Game-3\ICS 161 Game 3\testBuild_Data\Managed\System.dll (this message is harmless)
+Platform assembly: E:\_Unity Projects\ICS161-Game-3\testBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading E:\_Unity Projects\ICS161-Game-3\testBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: E:\_Unity Projects\ICS161-Game-3\testBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading E:\_Unity Projects\ICS161-Game-3\testBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: E:\_Unity Projects\ICS161-Game-3\testBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading E:\_Unity Projects\ICS161-Game-3\testBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: E:\_Unity Projects\ICS161-Game-3\testBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading E:\_Unity Projects\ICS161-Game-3\testBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: E:\_Unity Projects\ICS161-Game-3\testBuild_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading E:\_Unity Projects\ICS161-Game-3\testBuild_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.160 seconds
+Platform assembly: E:\_Unity Projects\ICS161-Game-3\testBuild_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: E:\_Unity Projects\ICS161-Game-3\testBuild_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 3.834659 ms
-1
+The referenced script on this Behaviour (Game Object 'Ready Menu') is missing!
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+(Filename:  Line: 1754)
 
-1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
+UnloadTime: 1.254029 ms
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 71c -> priority: 1 
+  Thread -> id: 2df8 -> priority: 1 
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.669382 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 783.
+Total: 0.322006 ms (FindLiveObjects: 0.057730 ms CreateObjectMapping: 0.020526 ms MarkObjects: 0.229317 ms  DeleteObjects: 0.014111 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at ControllerPlayerPickUpController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Can unlock: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can pick up Key
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Picked up: Key
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+SingleLockedDoor (UnityEngine.Transform)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can pick up Key
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Picked up: Key
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Door2Pivot (UnityEngine.Transform)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player two used key: True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player two used key on double door.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Door1Pivot (UnityEngine.Transform)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player 1 used key: True
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player 1 used key on double door.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Can unlock: False
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Player1
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
