@@ -103,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1952900748237208}
   m_LocalRotation: {x: -0, y: 0.67168635, z: -0, w: 0.7408356}
-  m_LocalPosition: {x: 32.381207, y: 1, z: -10.913868}
+  m_LocalPosition: {x: -40.794033, y: 5.5, z: -24.41517}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4606045416844942}
@@ -253,7 +253,7 @@ MonoBehaviour:
   currentHealth: 100
   lookRange: 30
   attackRange: 30
-  attackCooldownTime: 1
+  attackCooldownTime: 1.5
   isRanged: 1
   door: {fileID: 0}
 --- !u!114 &114628778096370100

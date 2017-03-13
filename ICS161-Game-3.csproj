@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyMovementController.cs" />
     <Compile Include="Assets\Scripts\Enemy\TargetLockController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GoToNextLevel.cs" />
     <Compile Include="Assets\Scripts\LowerPlatform.cs" />
     <Compile Include="Assets\Scripts\OpenDoor.cs" />
     <Compile Include="Assets\Scripts\OpenDoor2.cs" />

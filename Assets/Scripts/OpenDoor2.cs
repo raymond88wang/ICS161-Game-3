@@ -6,13 +6,15 @@ public class OpenDoor2 : MonoBehaviour
     public GameObject meleeEnemy;
     public GameObject rangedEnemy;
     public GameObject door;
+    public int killedEnemiesNeeded = 0;
     private int deadEnemies = 0;
     private bool open = false;
 
 
+
     private void Update()
     {
-        if (deadEnemies == 2)
+        if (deadEnemies == killedEnemiesNeeded)
         {
             if (!open)
             {

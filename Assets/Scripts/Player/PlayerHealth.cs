@@ -102,6 +102,10 @@ public class PlayerHealth : MonoBehaviour
     void updateHealth()
     {
         float ratio = (float)currentHealth / startingHealth;
+        if (ratio < 0)
+        {
+            ratio = 0;
+        }
         currentHealthBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
     }
 }
