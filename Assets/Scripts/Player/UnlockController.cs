@@ -20,8 +20,28 @@ public class UnlockController : MonoBehaviour {
             if (Lock.transform.parent.parent.parent != null && Lock.transform.parent.parent.parent.CompareTag("double doors"))
             {
                 playerUsedKey = true;
-                Debug.Log("Player two used key: " + playerUsedKey);
-                Debug.Log("Player two used key on double door.");
+                Debug.Log("Player 1 used key: " + playerUsedKey);
+                Debug.Log("Player 1 used key on double door.");
+            }
+            else if (Lock.transform.parent.parent.CompareTag("platformA"))
+            {
+                Debug.Log("Player 1 can pull down platform Y.");
+                GameObject.FindGameObjectWithTag("platformY").GetComponent<Animator>().SetTrigger("Lower");
+            }
+            else if (Lock.transform.parent.parent.CompareTag("platformX"))
+            {
+                Debug.Log("Player 1 can pull down platform B.");
+                GameObject.FindGameObjectWithTag("platformB").GetComponent<Animator>().SetTrigger("Lower");
+            }
+            else if (Lock.transform.parent.parent.CompareTag("platformB"))
+            {
+                Debug.Log("Player 1 can pull down platform Z.");
+                GameObject.FindGameObjectWithTag("platformZ").GetComponent<Animator>().SetTrigger("Lower");
+            }
+            else if (Lock.transform.parent.parent.CompareTag("platformY"))
+            {
+                Debug.Log("Player 1 can pull down platform C.");
+                GameObject.FindGameObjectWithTag("platformC").GetComponent<Animator>().SetTrigger("Lower");
             }
             else
             {

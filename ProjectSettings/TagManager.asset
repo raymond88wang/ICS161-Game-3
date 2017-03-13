@@ -15,6 +15,13 @@ TagManager:
   - Enemy
   - arrow
   - double doors
+  - platform
+  - platformA
+  - platformB
+  - platformX
+  - platformY
+  - platformZ
+  - platformC
   layers:
   - Default
   - TransparentFX
