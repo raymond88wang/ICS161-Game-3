@@ -13,12 +13,14 @@ public class GameManager : MonoBehaviour {
     private bool player1Ready;
     private bool player2Ready;
     private bool player2CanReady;
+    private bool canChangeReady;
 
     private void Start()
     {
         player1Ready = false;
         player2Ready = false;
         player2CanReady = false;
+        canChangeReady = true;
         
     }
 
@@ -36,12 +38,13 @@ public class GameManager : MonoBehaviour {
             {
                 player2CanReady = true;
             }
-            if (player2CanReady && Input.GetButtonDown("A"))
+
+            if (player2CanReady && Input.GetButtonDown("A") && canChangeReady)
             {
                 player2Ready = !player2Ready;
             }
       
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") && canChangeReady)
             {
                 player1Ready = !player1Ready;
             }
@@ -70,7 +73,8 @@ public class GameManager : MonoBehaviour {
 
             if(player1Ready && player2Ready)
             {
-                SceneManager.LoadScene(1);
+                canChangeReady = false;
+                StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "Level 1 - Tutorial"));
             }
 
         }
