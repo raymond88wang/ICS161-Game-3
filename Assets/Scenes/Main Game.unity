@@ -3268,6 +3268,11 @@ Prefab:
       propertyPath: heldItemText
       value: 
       objectReference: {fileID: 584344002}
+    - target: {fileID: 114067524862862742, guid: 42265999bad482046a6816f15ce086b2,
+        type: 2}
+      propertyPath: restartMessage
+      value: 
+      objectReference: {fileID: 1053763367}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42265999bad482046a6816f15ce086b2, type: 2}
   m_IsPrefabParent: 0
@@ -3637,6 +3642,11 @@ Prefab:
     - target: {fileID: 114972257177027828, guid: ca6a36a64c14bff4aa105c39a7e40228,
         type: 2}
       propertyPath: deathMessage
+      value: 
+      objectReference: {fileID: 1053763367}
+    - target: {fileID: 114972257177027828, guid: ca6a36a64c14bff4aa105c39a7e40228,
+        type: 2}
+      propertyPath: restartMessage
       value: 
       objectReference: {fileID: 1053763367}
     m_RemovedComponents: []
