@@ -33,7 +33,7 @@ public class ControllerPlayerPickUpController : MonoBehaviour
                     //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
                     itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
                     itemToPickUp.transform.localPosition = new Vector3(-.5f, 0, 0);
-                    GetComponent<PlayerArrowShootingController>().enabled = true;
+                    GetComponent<ControllerPlayerArrowShootingController>().enabled = true;
                 }
                 else if (heldItem.name.Equals("Key"))
                 {
@@ -50,9 +50,9 @@ public class ControllerPlayerPickUpController : MonoBehaviour
                 heldItem.transform.parent = null;
                 HeldItemName = "None";
                 Debug.Log("Dropped: " + heldItem.name);
-                if (GetComponent<PlayerArrowShootingController>() != null)
+                if (GetComponent<ControllerPlayerArrowShootingController>() != null)
                 {
-                    GetComponent<PlayerArrowShootingController>().enabled = false;
+                    GetComponent<ControllerPlayerArrowShootingController>().enabled = false;
                 }
                 heldItem = null;
             }
