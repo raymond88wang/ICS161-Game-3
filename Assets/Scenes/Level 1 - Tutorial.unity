@@ -1148,6 +1148,11 @@ Prefab:
       propertyPath: deathMessage
       value: 
       objectReference: {fileID: 901561618}
+    - target: {fileID: 114748964705265634, guid: 42265999bad482046a6816f15ce086b2,
+        type: 2}
+      propertyPath: prefabArrow
+      value: 
+      objectReference: {fileID: 100000, guid: cff4c024d20095a458a66e6e0d47bf1b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 42265999bad482046a6816f15ce086b2, type: 2}
   m_IsPrefabParent: 0
@@ -3611,11 +3616,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 114857069074897076, guid: ca6a36a64c14bff4aa105c39a7e40228,
-        type: 2}
-      propertyPath: heldItemText
-      value: 
-      objectReference: {fileID: 754939591}
     - target: {fileID: 114972257177027828, guid: ca6a36a64c14bff4aa105c39a7e40228,
         type: 2}
       propertyPath: damageImage
@@ -3631,20 +3631,11 @@ Prefab:
       propertyPath: deathMessage
       value: 
       objectReference: {fileID: 901561618}
-    - target: {fileID: 1938247284087882, guid: ca6a36a64c14bff4aa105c39a7e40228, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114365941219670548, guid: ca6a36a64c14bff4aa105c39a7e40228,
+    - target: {fileID: 114857069074897076, guid: ca6a36a64c14bff4aa105c39a7e40228,
         type: 2}
-      propertyPath: arrowForce
-      value: 1500
-      objectReference: {fileID: 0}
-    - target: {fileID: 114972257177027828, guid: ca6a36a64c14bff4aa105c39a7e40228,
-        type: 2}
-      propertyPath: attackCooldownTime
-      value: 0.25
-      objectReference: {fileID: 0}
+      propertyPath: heldItemText
+      value: 
+      objectReference: {fileID: 754939591}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ca6a36a64c14bff4aa105c39a7e40228, type: 2}
   m_IsPrefabParent: 0
