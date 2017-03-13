@@ -19,7 +19,7 @@ public class ControllerPlayerPickUpController : MonoBehaviour
     {
         if (Input.GetButtonDown("X"))
         {
-            if (heldItem == null)
+            if (heldItem == null && itemToPickUp != null)
             {
                 heldItem = itemToPickUp;
                 heldItem.transform.parent = holdSlot.transform;
@@ -33,7 +33,7 @@ public class ControllerPlayerPickUpController : MonoBehaviour
                     //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
                     itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
                     itemToPickUp.transform.localPosition = new Vector3(-.5f, 0, 0);
-                    GetComponent<ControllerPlayerArrowShootingController>().enabled = true;
+                    GetComponent<PlayerArrowShootingController>().enabled = true;
                 }
                 else if (heldItem.name.Equals("Key"))
                 {
@@ -42,14 +42,18 @@ public class ControllerPlayerPickUpController : MonoBehaviour
                 }
                 Debug.Log("Picked up: " + heldItem.name);
             }
-            else
+
+            else if (heldItem != null)
             {
                 heldItem.GetComponent<Rigidbody>().isKinematic = false;
                 heldItem.GetComponent<SphereCollider>().enabled = true;
                 heldItem.transform.parent = null;
                 HeldItemName = "None";
                 Debug.Log("Dropped: " + heldItem.name);
-                GetComponent<ControllerPlayerArrowShootingController>().enabled = false;
+                if (GetComponent<PlayerArrowShootingController>() != null)
+                {
+                    GetComponent<PlayerArrowShootingController>().enabled = false;
+                }
                 heldItem = null;
             }
             UpdateHeldItemUI();

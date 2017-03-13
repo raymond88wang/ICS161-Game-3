@@ -18,9 +18,7 @@ public class PlayerPickUpController : MonoBehaviour {
     {
         if (Input.GetKeyDown("e"))
         {
-            if (itemToPickUp != null)
-            {
-                if (heldItem == null)
+                if (heldItem == null && itemToPickUp != null)
                 {
                     heldItem = itemToPickUp;
                     heldItem.transform.parent = holdSlot.transform;
@@ -43,7 +41,8 @@ public class PlayerPickUpController : MonoBehaviour {
                     }
                     Debug.Log("Picked up: " + heldItem.name);
                 }
-                else
+                
+                else if (heldItem != null)
                 {
                     heldItem.GetComponent<Rigidbody>().isKinematic = false;
                     heldItem.GetComponent<SphereCollider>().enabled = true;
@@ -57,7 +56,7 @@ public class PlayerPickUpController : MonoBehaviour {
                     heldItem = null;
                 }
                 UpdateHeldItemUI();
-            }
+            
         }
     }
 
