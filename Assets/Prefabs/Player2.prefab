@@ -318,6 +318,7 @@ MonoBehaviour:
   stamina: 100
   attackCooldownTime: 0.25
   deathMessage: {fileID: 0}
+  restartMessage: {fileID: 0}
 --- !u!124 &124168969837142872
 Behaviour:
   m_ObjectHideFlags: 1

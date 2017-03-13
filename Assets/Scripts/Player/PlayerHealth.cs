@@ -17,12 +17,14 @@ public class PlayerHealth : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float stamina = 100.0f;
     public float attackCooldownTime = 1.0f;
+    private float restartTimer = 0;
 
     //PlayerController playerMovement;                              
     //PlayerShooting playerShooting;                              
     bool isDead;                                                
     bool damaged;
     public Text deathMessage;
+    public Text restartMessage;
 
     void Awake()
     {
@@ -34,6 +36,7 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth = startingHealth;
         deathMessage.text = "";
+        restartMessage.text = "";
         updateHealth();
     }
 
@@ -49,6 +52,12 @@ public class PlayerHealth : MonoBehaviour
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
         damaged = false;
+
+        if(isDead)
+        {
+            restartMessage.text = "Restart: " + (int) (restartTimer + 1);
+            restartTimer -= Time.deltaTime;
+        }
     }
 
 
@@ -90,13 +99,15 @@ public class PlayerHealth : MonoBehaviour
         {
             GetComponent<ControllerPlayerArrowShootingController>().enabled = false;
         }
-        Invoke("ReloadLevel", 3);
+        restartTimer = 3;
+        Invoke("ReloadLevel", restartTimer);
     }
 
     void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         deathMessage.text = "";
+        restartMessage.text = "";
     }
 
     void updateHealth()

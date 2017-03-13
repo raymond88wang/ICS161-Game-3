@@ -236,6 +236,7 @@ MonoBehaviour:
   stamina: 100
   attackCooldownTime: 0.25
   deathMessage: {fileID: 0}
+  restartMessage: {fileID: 0}
 --- !u!114 &114097052389507580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -302,8 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd01755e2ddef3a458cfbeb08f95205f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabArrow: {fileID: 1337215094618800, guid: dc19a78b4f0c73e44b6e9d3a4e099465,
-    type: 2}
+  prefabArrow: {fileID: 100000, guid: cff4c024d20095a458a66e6e0d47bf1b, type: 2}
   spawnPoint: {fileID: 1852771120990696}
   camDirection: {fileID: 4246717805601036}
   arrowForce: 1500

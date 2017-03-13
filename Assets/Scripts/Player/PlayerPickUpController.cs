@@ -77,7 +77,7 @@ public class PlayerPickUpController : MonoBehaviour {
 
     void UpdateHeldItemUI()
     {
-        heldItemText.text = "Holding: " + (heldItem == null ? "None" : heldItem.name) + "\nCan pick up: " + (heldItem == null) + "\nIs holding item: " + (heldItem == null);
+        heldItemText.text = "Holding: " + (heldItem == null ? "None" : heldItem.name); // + "\nCan pick up: " + (heldItem == null) + "\nIs holding item: " + (heldItem == null);
     }
 
     public string getHeldItemName()
