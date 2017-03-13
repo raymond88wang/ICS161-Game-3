@@ -24,6 +24,7 @@ public class PlayerArrowShootingController : MonoBehaviour {
         if (Input.GetMouseButton(0) && timer >= player.attackCooldownTime)
         {
             GameObject Temp_Arrow = Instantiate(prefabArrow, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
+            Temp_Arrow.transform.Rotate(Vector3.up * 90);
             Rigidbody Temp_rb = Temp_Arrow.GetComponent<Rigidbody>();
             Temp_rb.AddForce(camDirection.transform.forward * arrowForce);
 
