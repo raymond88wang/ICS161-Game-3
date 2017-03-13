@@ -21,7 +21,7 @@ public class PlayerMovementController : MonoBehaviour
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= player.walkSpeed;
             //Jump
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetButtonDown("Jump"))
                 moveDirection.y = player.jumpSpeed;
             //Sprint
             if (Input.GetKey(KeyCode.LeftShift))
