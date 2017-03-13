@@ -45,6 +45,6 @@ public class GoToNextLevel : MonoBehaviour {
 
     private void StartMainLevel()
     {
-        SceneManager.LoadScene(2);
+        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "Main Game"));
     }
 }
