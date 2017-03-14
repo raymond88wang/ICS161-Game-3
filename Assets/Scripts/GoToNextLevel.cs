@@ -18,7 +18,7 @@ public class GoToNextLevel : MonoBehaviour {
             player1ready = true;
             if (player2ready)
             {
-                StartMainLevel();
+                ChangeLevel();
             }
         }
         if (other.gameObject.name == "Player2")
@@ -26,7 +26,7 @@ public class GoToNextLevel : MonoBehaviour {
             player2ready = true;
             if (player1ready)
             {
-                StartMainLevel();
+                ChangeLevel();
             }
         }
     }
@@ -46,5 +46,22 @@ public class GoToNextLevel : MonoBehaviour {
     private void StartMainLevel()
     {
         StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "Main Game"));
+    }
+    
+    private void GoToMainMenu()
+    {
+        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "Main Menu"));
+    }
+
+    private void ChangeLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            StartMainLevel();
+        }
+        else
+        {
+            GoToMainMenu();
+        }
     }
 }
