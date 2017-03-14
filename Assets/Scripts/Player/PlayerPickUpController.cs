@@ -36,8 +36,8 @@ public class PlayerPickUpController : MonoBehaviour {
                     }
                     else if (heldItem.name.Equals("Key"))
                     {
-                        itemToPickUp.transform.localEulerAngles = new Vector3(-121f, -19f, 49.33f);
-                        itemToPickUp.transform.localPosition = new Vector3(0.34f, 0.54f, 1.27f);
+                        itemToPickUp.transform.localEulerAngles = new Vector3(-3.5f, -90f, 128f);
+                        itemToPickUp.transform.localPosition = new Vector3(-0.2f, 0.6f, 1.7f);
                     }
                     Debug.Log("Picked up: " + heldItem.name);
                 }

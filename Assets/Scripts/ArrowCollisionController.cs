@@ -6,7 +6,6 @@ public class ArrowCollisionController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        print("Hi");
         if (collision.gameObject.CompareTag("Enemy"))
         {
             print("Hit enemy");
