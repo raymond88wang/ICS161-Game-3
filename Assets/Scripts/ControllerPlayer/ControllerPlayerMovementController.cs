@@ -25,9 +25,21 @@ public class ControllerPlayerMovementController : MonoBehaviour {
                 moveDirection.y = player.jumpSpeed;
             //Sprint
             //if (Input.GetButtonDown("LeftJoystick8"))
-            if (Input.GetKey(KeyCode.Joystick1Button8))
+            if (Input.GetKey(KeyCode.Joystick1Button8) && player.currentStamina > 0)
             {
-                moveDirection *= player.sprintSpeed;
+                player.currentStamina -= player.staminaDepletionScale * Time.deltaTime;
+                moveDirection.x *= player.sprintSpeed;
+                moveDirection.z *= player.sprintSpeed;
+                player.updateStamina();
+            }
+            if (player.currentStamina < player.startingStamina && !Input.GetKey(KeyCode.Joystick1Button8))
+            {
+                player.currentStamina += player.staminaReplenishScale * Time.deltaTime;
+                if (player.currentStamina > player.startingStamina)
+                {
+                    player.currentStamina = player.startingStamina;
+                }
+                player.updateStamina();
             }
         }
         moveDirection.y -= gravity * Time.deltaTime;

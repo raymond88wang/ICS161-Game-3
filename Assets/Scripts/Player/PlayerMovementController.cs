@@ -33,7 +33,7 @@ public class PlayerMovementController : MonoBehaviour
                 moveDirection.z *= player.sprintSpeed;
                 player.updateStamina();
             }
-            if (player.currentStamina < player.startingStamina)
+            if (player.currentStamina < player.startingStamina && !Input.GetKey(KeyCode.LeftShift))
             {
                 player.currentStamina += player.staminaReplenishScale * Time.deltaTime;
                 if (player.currentStamina > player.startingStamina)
