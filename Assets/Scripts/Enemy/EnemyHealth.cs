@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour {
     public Image currentBossHealthBar = null;
     public GameObject bossHealthBar = null;
     public GameObject door = null;
+    public AudioClip bossDead;
 
     void Awake()
     {
@@ -42,6 +43,8 @@ public class EnemyHealth : MonoBehaviour {
 
         if (isBoss)
         {
+            GameObject.FindGameObjectWithTag("Boss Battle Music").GetComponent<AudioSource>().Stop();
+            GameObject.FindGameObjectWithTag("Boss Battle Music").GetComponent<AudioSource>().PlayOneShot(bossDead, 0.5f);
             bossHealthBar.SetActive(false);
         }
         Destroy(gameObject, 0);     

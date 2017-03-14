@@ -7,10 +7,12 @@ public class PlayerArrowShootingController : MonoBehaviour {
     public float arrowForce = 750.0f;
     private float timer = 0.0f;
     private PlayerHealth player;
+    private PlayerPickUpController pickUp;
 
     private void Awake()
     {
         player = GetComponent<PlayerHealth>();
+        pickUp = GetComponent<PlayerPickUpController>();
     }
 
     private void Start()
@@ -27,7 +29,10 @@ public class PlayerArrowShootingController : MonoBehaviour {
             Temp_Arrow.transform.Rotate(Vector3.up * 90);
             Rigidbody Temp_rb = Temp_Arrow.GetComponent<Rigidbody>();
             Temp_rb.AddForce(camDirection.transform.forward * arrowForce);
-
+            if(pickUp.heldItem.name.Equals("Bow"))
+            {
+                pickUp.heldItem.GetComponent<AudioSource>().Play();
+            }
             Destroy(Temp_Arrow, 7);
             timer = 0.0f;
         }

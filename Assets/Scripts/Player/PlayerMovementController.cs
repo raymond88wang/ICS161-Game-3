@@ -5,7 +5,7 @@ public class PlayerMovementController : MonoBehaviour
     public float gravity = 20.0F;
     private CharacterController character;
     private PlayerHealth player;
-    private Vector3 moveDirection = Vector3.zero;
+    public Vector3 moveDirection = Vector3.zero;
 
     private void Awake()
     {
@@ -22,11 +22,25 @@ public class PlayerMovementController : MonoBehaviour
             moveDirection *= player.walkSpeed;
             //Jump
             if (Input.GetButtonDown("Jump"))
-                moveDirection.y = player.jumpSpeed;
-            //Sprint
-            if (Input.GetKey(KeyCode.LeftShift))
             {
-                moveDirection *= player.sprintSpeed;
+                moveDirection.y = player.jumpSpeed;
+            }
+            //Sprint
+            if (Input.GetKey(KeyCode.LeftShift) && player.currentStamina > 0)
+            {
+                player.currentStamina -= player.staminaDepletionScale * Time.deltaTime;
+                moveDirection.x *= player.sprintSpeed;
+                moveDirection.z *= player.sprintSpeed;
+                player.updateStamina();
+            }
+            if (player.currentStamina < player.startingStamina)
+            {
+                player.currentStamina += player.staminaReplenishScale * Time.deltaTime;
+                if (player.currentStamina > player.startingStamina)
+                {
+                    player.currentStamina = player.startingStamina;
+                }
+                player.updateStamina();
             }
         }
         moveDirection.y -= gravity * Time.deltaTime;

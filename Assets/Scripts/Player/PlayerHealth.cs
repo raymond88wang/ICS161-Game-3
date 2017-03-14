@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,14 +11,22 @@ public class PlayerHealth : MonoBehaviour
     //public Image damageImage;         
     public Image damageImage;
     public Image currentHealthBar;
+    public Image currentStaminaBar;
     public float flashSpeed = 5f;                               
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     public float walkSpeed = 6.0f;
     public float sprintSpeed = 2.5f;
     public float jumpSpeed = 8.0f;
-    public float stamina = 100.0f;
+    public float startingStamina = 100.0f;
+    public float currentStamina;
+    public float staminaDepletionScale = 80.0f;
+    public float staminaReplenishScale = 30.0f;
     public float attackCooldownTime = 1.0f;
     private float restartTimer = 0;
+    private float timer = 0;
+    public AudioClip heartbeat;
+    public AudioClip hit;
+    public AudioClip dead;
 
     //PlayerController playerMovement;                              
     //PlayerShooting playerShooting;                              
@@ -35,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
 
 
         currentHealth = startingHealth;
+        currentStamina = startingStamina;
         deathMessage.text = "";
         restartMessage.text = "";
         updateHealth();
@@ -43,6 +53,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+        timer += Time.deltaTime;
         if (damaged)
         {
             damageImage.color = flashColour;
@@ -53,7 +64,14 @@ public class PlayerHealth : MonoBehaviour
         }
         damaged = false;
 
-        if(isDead)
+        if(currentHealth < 25 && timer >= 9)
+        {
+            GameObject.FindGameObjectWithTag("Game Music").GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().PlayOneShot(heartbeat, 0.5f);
+            timer = 0;
+        }
+
+        if (isDead)
         {
             restartMessage.text = "Restart: " + (int) (restartTimer + 1);
             restartTimer -= Time.deltaTime;
@@ -63,6 +81,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        GetComponent<AudioSource>().PlayOneShot(hit, 0.5f);
+
         damaged = true;
 
         currentHealth -= amount;
@@ -81,7 +101,9 @@ public class PlayerHealth : MonoBehaviour
         // Set the death flag so this function won't be called again.
         isDead = true;
         print("Dead");
-
+        GameObject.FindGameObjectWithTag("Boss Battle Music").GetComponent<AudioSource>().Stop();
+        GameObject.FindGameObjectWithTag("Game Music").GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().PlayOneShot(dead, 0.5f);
         deathMessage.text = gameObject.name.ToString() + "Died";
         if (GetComponent<PlayerMovementController>() != null)
         {
@@ -118,5 +140,15 @@ public class PlayerHealth : MonoBehaviour
             ratio = 0;
         }
         currentHealthBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
+    }
+
+    public void updateStamina()
+    {
+        float ratio = (float)currentStamina / startingStamina;
+        if (ratio < 0)
+        {
+            ratio = 0;
+        }
+        currentStaminaBar.rectTransform.localScale = new Vector3(ratio, 1, 1);
     }
 }

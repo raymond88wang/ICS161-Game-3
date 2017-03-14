@@ -22,6 +22,8 @@ TagManager:
   - platformY
   - platformZ
   - platformC
+  - Game Music
+  - Boss Battle Music
   layers:
   - Default
   - TransparentFX
