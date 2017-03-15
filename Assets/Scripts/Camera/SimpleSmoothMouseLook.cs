@@ -16,6 +16,8 @@ public class SimpleSmoothMouseLook : MonoBehaviour
     public Vector2 smoothing = new Vector2(3, 3);
     public Vector2 targetDirection;
     public Vector2 targetCharacterDirection;
+    public Texture2D mouse;
+    private Vector3 mouseSpot = Vector3.zero;
 
     // Assign this if there's a parent object controlling motion, such as a Character Controller.
     // Yaw rotation will affect this object instead of the camera if set.
@@ -28,12 +30,17 @@ public class SimpleSmoothMouseLook : MonoBehaviour
 
         // Set target direction for the character body to its inital state.
         if (characterBody) targetCharacterDirection = characterBody.transform.localRotation.eulerAngles;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Cursor.SetCursor(mouse, mouseSpot, CursorMode.Auto);
     }
 
     void Update()
     {
         // Ensure the cursor is always locked when set
-        Screen.lockCursor = lockCursor;
+        //Screen.lockCursor = lockCursor;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         // Allow the script to clamp based on a desired target value.
         var targetOrientation = Quaternion.Euler(targetDirection);
