@@ -10,7 +10,7 @@ public class EnemyAttackController : MonoBehaviour
     private float timer = 0.0f;                     //Timer for counting up to the next attack
     private float distanceToPlayer1 = 0.0f;
     private float distanceToPlayer2 = 0.0f;
-    public int damage = 5;
+    public float damage = 5;
     private TargetLockController targetLock;
 
     private void Awake()

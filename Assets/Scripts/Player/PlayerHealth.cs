@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int startingHealth = 100;                            
-    public int currentHealth;
+    public float startingHealth = 100;                            
+    public float currentHealth;
     //public Slider healthSlider;                                 
     //public Image damageImage;         
     public Image damageImage;
@@ -79,7 +79,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         GetComponent<AudioSource>().PlayOneShot(hit, 0.5f);
 

@@ -544,6 +544,7 @@ MonoBehaviour:
   currentBossHealthBar: {fileID: 0}
   bossHealthBar: {fileID: 0}
   door: {fileID: 0}
+  bossDead: {fileID: 0}
 --- !u!114 &114628778096370100
 MonoBehaviour:
   m_ObjectHideFlags: 1
