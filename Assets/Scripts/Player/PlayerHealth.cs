@@ -5,22 +5,23 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int startingHealth = 100;                            
-    public int currentHealth;
+    public float startingHealth = 100.0f;                            
+    public float currentHealth;
+    public float startingStamina = 100.0f;
+    public float currentStamina;
+    public float staminaDepletionScale = 80.0f;
+    public float staminaReplenishScale = 30.0f;
     //public Slider healthSlider;                                 
     //public Image damageImage;         
     public Image damageImage;
     public Image currentHealthBar;
     public Image currentStaminaBar;
-    public float flashSpeed = 5f;                               
-    public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     public float walkSpeed = 6.0f;
     public float sprintSpeed = 2.5f;
     public float jumpSpeed = 8.0f;
-    public float startingStamina = 100.0f;
-    public float currentStamina;
-    public float staminaDepletionScale = 80.0f;
-    public float staminaReplenishScale = 30.0f;
+    public float flashSpeed = 5f;                               
+    public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
+    public float defense = 1.0f;
     public float attackCooldownTime = 1.0f;
     private float restartTimer = 0;
     private float timer = 0;
@@ -79,13 +80,13 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float damageAmount)
     {
         GetComponent<AudioSource>().PlayOneShot(hit, 0.5f);
 
         damaged = true;
 
-        currentHealth -= amount;
+        currentHealth -= (damageAmount / defense);
 
         updateHealth();
 
@@ -109,17 +110,17 @@ public class PlayerHealth : MonoBehaviour
         {
             GetComponent<PlayerMovementController>().enabled = false;
         }
-        if (GetComponent<PlayerArrowShootingController>() != null)
+        if (GetComponent<PlayerAttackController>() != null)
         {
-            GetComponent<PlayerArrowShootingController>().enabled = false;
+            GetComponent<PlayerAttackController>().enabled = false;
         }
         if (GetComponent<ControllerPlayerMovementController>() != null)
         {
             GetComponent<ControllerPlayerMovementController>().enabled = false;
         }
-        if (GetComponent<ControllerPlayerArrowShootingController>() != null)
+        if (GetComponent<ArrowShootingController>() != null)
         {
-            GetComponent<ControllerPlayerArrowShootingController>().enabled = false;
+            GetComponent<ArrowShootingController>().enabled = false;
         }
         restartTimer = 3;
         Invoke("ReloadLevel", restartTimer);

@@ -12,7 +12,7 @@ public class TargetLockController : MonoBehaviour {
         Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), direction);
 
         spotted = Physics.Raycast(transform.position + new Vector3(0,0.5f,0), direction, out hit, lookRange) &&
-            (hit.collider.gameObject.CompareTag("Player1") || hit.collider.gameObject.CompareTag("Player2"));
+            (hit.collider.gameObject.GetComponent<PlayerHealth>() != null);
 
         if(spotted)
         {

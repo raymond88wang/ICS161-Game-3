@@ -7,56 +7,75 @@ public class PlayerPickUpController : MonoBehaviour {
     public GameObject holdSlot;
     private string HeldItemName;
     public Text heldItemText;
+    private PlayerHealth player;
 
     private void Start ()
     {
+        player = GetComponent<PlayerHealth>();
         HeldItemName = "None";
         UpdateHeldItemUI();
     }
 
     private void Update ()
     {
+        if (Input.GetKey(KeyCode.N))
+        {
+            print(heldItem.transform.localEulerAngles);
+            print(heldItem.transform.localPosition);
+        }
         if (Input.GetKeyDown("e"))
         {
-                if (heldItem == null && itemToPickUp != null)
+            if (heldItem == null && itemToPickUp != null)
+            {
+                heldItem = itemToPickUp;
+                heldItem.transform.parent = holdSlot.transform;
+                heldItem.transform.position = holdSlot.transform.position;
+                heldItem.transform.rotation = holdSlot.transform.rotation;
+                heldItem.GetComponent<Rigidbody>().isKinematic = true;
+                heldItem.GetComponent<SphereCollider>().enabled = false;
+                HeldItemName = heldItem.name;
+                if (heldItem.name.Equals("Bow"))
                 {
-                    heldItem = itemToPickUp;
-                    heldItem.transform.parent = holdSlot.transform;
-                    heldItem.transform.position = holdSlot.transform.position;
-                    heldItem.transform.rotation = holdSlot.transform.rotation;
-                    heldItem.GetComponent<Rigidbody>().isKinematic = true;
-                    heldItem.GetComponent<SphereCollider>().enabled = false;
-                    HeldItemName = heldItem.name;
-                    if (heldItem.name.Equals("Bow"))
-                    {
-                        //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
-                        itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
-                        itemToPickUp.transform.localPosition = new Vector3(-.5f, 0, 0);
-                        GetComponent<PlayerArrowShootingController>().enabled = true;
-                    }
-                    else if (heldItem.name.Equals("Key"))
-                    {
-                        itemToPickUp.transform.localEulerAngles = new Vector3(-3.5f, -90f, 128f);
-                        itemToPickUp.transform.localPosition = new Vector3(-0.2f, 0.6f, 1.7f);
-                    }
-                    Debug.Log("Picked up: " + heldItem.name);
+                    player.attackCooldownTime = 0.5f;
+                    player.defense = 1.0f;
+                    heldItem.gameObject.GetComponent<ArrowShootingController>().camDirection = player.GetComponentInChildren<Camera>().transform;
+                    heldItem.transform.localEulerAngles = new Vector3(-85f, -150f, -130f);
+                    heldItem.transform.localPosition = holdSlot.transform.localPosition + new Vector3(-0.8f, 1.4f, -0.5f);
                 }
-                
-                else if (heldItem != null)
+                else if (heldItem.name.Equals("Key"))
                 {
-                    heldItem.GetComponent<Rigidbody>().isKinematic = false;
-                    heldItem.GetComponent<SphereCollider>().enabled = true;
-                    heldItem.transform.parent = null;
-                    HeldItemName = "None";
-                    Debug.Log("Dropped: " + heldItem.name);
-                    if (GetComponent<PlayerArrowShootingController>() != null)
-                    {
-                        GetComponent<PlayerArrowShootingController>().enabled = false;
-                    }
-                    heldItem = null;
+                    heldItem.transform.localEulerAngles = holdSlot.transform.localEulerAngles;
+                    heldItem.transform.Rotate(new Vector3(0, 60, -97));
+                    heldItem.transform.localPosition = holdSlot.transform.localPosition + new Vector3(-1.4f, 0.0f, 1.5f);
                 }
-                UpdateHeldItemUI();
-            
+                else if (heldItem.name.Equals("Sword"))
+                {
+                    player.attackCooldownTime = 0.25f;
+                    player.defense = 10.0f;
+                    player.startingStamina = 200.0f;
+                    heldItem.transform.localEulerAngles = holdSlot.transform.localEulerAngles;
+                    heldItem.transform.Rotate(Vector3.up * -130);
+                    heldItem.transform.localPosition = holdSlot.transform.localPosition + new Vector3(-0.5f, 0.8f, -0.4f);
+                    heldItem.GetComponentInChildren<CapsuleCollider>().enabled = true;
+                    heldItem.GetComponentInChildren<SwordCollisionController>().isOnGround = false;
+                }
+                Debug.Log("Picked up: " + heldItem.name);
+            }
+
+            else if (heldItem != null)
+            {
+                heldItem.GetComponent<Rigidbody>().isKinematic = false;
+                heldItem.GetComponent<SphereCollider>().enabled = true;
+                heldItem.transform.parent = null;
+                HeldItemName = "None";
+                if(heldItem.GetComponentInChildren<SwordCollisionController>() != null)
+                {
+                    heldItem.GetComponentInChildren<SwordCollisionController>().isOnGround = true;
+                }
+                Debug.Log("Dropped: " + heldItem.name);
+                heldItem = null;
+            }
+            UpdateHeldItemUI();
         }
     }
 

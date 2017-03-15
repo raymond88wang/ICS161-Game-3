@@ -22,9 +22,10 @@ public class ControllerPlayerMovementController : MonoBehaviour {
             moveDirection *= player.walkSpeed;
             //Jump
             if (Input.GetButtonDown("A"))
+            {
                 moveDirection.y = player.jumpSpeed;
+            }
             //Sprint
-            //if (Input.GetButtonDown("LeftJoystick8"))
             if (Input.GetKey(KeyCode.Joystick1Button8) && player.currentStamina > 0)
             {
                 player.currentStamina -= player.staminaDepletionScale * Time.deltaTime;

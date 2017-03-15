@@ -20,7 +20,6 @@ public class DoubleDoorUnlock : MonoBehaviour
     {
         if (P1.GetComponent<UnlockController>().playerUsedKeyTrue() && P2.GetComponent<ControllerUnlockController>().playerUsedKeyTrue())
         {
-            //Destroy(gameObject);
             anim.SetTrigger("Open");
             P1.GetComponent<UnlockController>().resetPlayerUsedKeyBool();
             P2.GetComponent<ControllerUnlockController>().resetPlayerUsedKeyBool();

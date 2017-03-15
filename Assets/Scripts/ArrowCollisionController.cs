@@ -2,7 +2,7 @@
 
 public class ArrowCollisionController : MonoBehaviour {
 
-    public int arrowDamage = 10;
+    public float arrowDamage = 10.0f;
 
     private void OnCollisionEnter(Collision collision)
     {
