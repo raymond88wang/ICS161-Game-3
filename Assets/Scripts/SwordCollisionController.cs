@@ -23,7 +23,7 @@ public class SwordCollisionController : MonoBehaviour {
         }
         if(collider.gameObject.GetComponent<PlayerHealth>() != null && collider.gameObject.GetComponent<PlayerHealth>().currentHealth > 0 && !isOnGround)
         {
-            if(collider.gameObject.name != transform.parent.transform.parent.transform.parent.name)
+            if(transform.parent.transform.parent.transform.parent == null)
             {
                 collider.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
             }
