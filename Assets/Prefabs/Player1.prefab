@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1814926426008202}
   m_LocalRotation: {x: -0, y: -0.9990444, z: 0, w: -0.04370639}
-  m_LocalPosition: {x: 31.62, y: 1, z: 21.26}
+  m_LocalPosition: {x: 35.96, y: 1, z: 27.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4246717805601036}
@@ -454,6 +454,7 @@ MonoBehaviour:
   smoothing: {x: 3, y: 3}
   targetDirection: {x: 0, y: 0}
   targetCharacterDirection: {x: 0, y: 0}
+  mouse: {fileID: 0}
   characterBody: {fileID: 1814926426008202}
 --- !u!114 &114748964705265634
 MonoBehaviour:

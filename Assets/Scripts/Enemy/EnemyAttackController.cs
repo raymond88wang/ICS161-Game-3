@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class EnemyAttackController : MonoBehaviour
 {
@@ -71,9 +72,11 @@ public class EnemyAttackController : MonoBehaviour
         print("Attacked player: " + player.tag);
         anim.SetTrigger("Swing");
 
-        if (player.GetComponent<PlayerHealth>().currentHealth > 0)
+        StartCoroutine(DealDamage(player));
+        
+        //if (player.GetComponent<PlayerHealth>().currentHealth > 0)
         {
-            player.GetComponent<PlayerHealth>().TakeDamage(damage);
+            //player.GetComponent<PlayerHealth>().TakeDamage(damage);
         }
     }
 
@@ -87,5 +90,14 @@ public class EnemyAttackController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, enemy.attackRange);
+    }
+
+    IEnumerator DealDamage(GameObject player)
+    {
+        yield return new WaitForSeconds(.1f);
+        if (player.GetComponent<PlayerHealth>().currentHealth > 0)
+        {
+            player.GetComponent<PlayerHealth>().TakeDamage(damage);
+        }
     }
 }
