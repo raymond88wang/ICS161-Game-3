@@ -5,7 +5,6 @@ public class BossFightStart : MonoBehaviour {
     public GameObject bossHealthBar;
     private AudioSource bossBattle;
     private GameObject boss;
-    public OpenDoor bossDoor;
 
     private void Awake()
     {
@@ -16,18 +15,14 @@ public class BossFightStart : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (boss != null)
+        GameObject.FindGameObjectWithTag("Game Music").GetComponent<AudioSource>().Stop();
+        if(!bossBattle.isPlaying && boss != null)
         {
-            GameObject.FindGameObjectWithTag("Game Music").GetComponent<AudioSource>().Stop();
-            if (!bossBattle.isPlaying && boss != null)
-            {
-                bossBattle.Play();
-                bossDoor.CloseTheDoor();
-            }
-            if (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player2"))
-            {
-                bossHealthBar.SetActive(true);
-            }
+            bossBattle.Play();
+        }
+        if (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player2"))
+        {
+            bossHealthBar.SetActive(true);
         }
     }
 }

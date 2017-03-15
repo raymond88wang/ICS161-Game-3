@@ -2,8 +2,8 @@
 using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour {
-    public float startingHealth = 100.0f;            // The amount of health the enemy starts the game with.
-    public float currentHealth;                   // The current health the enemy has.
+    public int startingHealth = 100;            // The amount of health the enemy starts the game with.
+    public int currentHealth;                   // The current health the enemy has.
     public float lookRange = 20.0f;
     public float attackRange = 5.0f;
     public float attackCooldownTime = 1.0f;
@@ -13,19 +13,16 @@ public class EnemyHealth : MonoBehaviour {
     public GameObject bossHealthBar = null;
     public GameObject door = null;
     public AudioClip bossDead;
-    public AudioClip hit;
 
     void Awake()
     {
         currentHealth = startingHealth;
-        isRanged = GetComponentInChildren<EnemyArrowShootingController>() != null;
+        isRanged = GetComponent<EnemyArrowShootingController>() != null;
     }
 
-    public void TakeDamage(float damageAmount)
+    public void TakeDamage(int amount)
     {
-        GetComponent<AudioSource>().PlayOneShot(hit, 0.5f);
-
-        currentHealth -= damageAmount;
+        currentHealth -= amount;
 
         if (isBoss)
         {
@@ -48,16 +45,14 @@ public class EnemyHealth : MonoBehaviour {
         {
             GameObject.FindGameObjectWithTag("Boss Battle Music").GetComponent<AudioSource>().Stop();
             GameObject.FindGameObjectWithTag("Boss Battle Music").GetComponent<AudioSource>().PlayOneShot(bossDead, 0.5f);
-            GameObject.FindGameObjectWithTag("Game Music").GetComponent<GameAudioManager>().StartCoroutine("StartGameMusicAgain");
-            bossHealthBar.SetActive(false); 
-
+            bossHealthBar.SetActive(false);
         }
         Destroy(gameObject, 0);     
     }
 
     void UpdateHealthBar()
     {
-        float ratio = currentHealth / startingHealth;
+        float ratio = (float)currentHealth / startingHealth;
         if (ratio < 0)
         {
             ratio = 0;

@@ -8,11 +8,9 @@ public class ControllerPlayerPickUpController : MonoBehaviour
     public GameObject holdSlot;
     private string HeldItemName;
     public Text heldItemText;
-    private PlayerHealth player;
 
     private void Start()
     {
-        player = GetComponent<PlayerHealth>();
         HeldItemName = "None";
         UpdateHeldItemUI();
     }
@@ -20,11 +18,6 @@ public class ControllerPlayerPickUpController : MonoBehaviour
     private void Update()
     {
         if (Input.GetButtonDown("X"))
-        {
-            print(heldItem.transform.localEulerAngles);
-            print(heldItem.transform.localPosition);
-        }
-        if (Input.GetKeyDown("e"))
         {
             if (heldItem == null && itemToPickUp != null)
             {
@@ -37,28 +30,15 @@ public class ControllerPlayerPickUpController : MonoBehaviour
                 HeldItemName = heldItem.name;
                 if (heldItem.name.Equals("Bow"))
                 {
-                    player.attackCooldownTime = 0.5f;
-                    player.defense = 1.0f;
-                    heldItem.gameObject.GetComponent<ArrowShootingController>().camDirection = player.GetComponentInChildren<Camera>().transform;
-                    heldItem.transform.localEulerAngles = new Vector3(-85f, -150f, -130f);
-                    heldItem.transform.localPosition = holdSlot.transform.localPosition + new Vector3(-0.8f, 1.4f, -0.5f);
+                    //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
+                    itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
+                    itemToPickUp.transform.localPosition = new Vector3(-.5f, 0, 0);
+                    GetComponent<ControllerPlayerArrowShootingController>().enabled = true;
                 }
                 else if (heldItem.name.Equals("Key"))
                 {
-                    heldItem.transform.localEulerAngles = holdSlot.transform.localEulerAngles;
-                    heldItem.transform.Rotate(new Vector3(0, 60, -97));
-                    heldItem.transform.localPosition = holdSlot.transform.localPosition + new Vector3(-1.4f, 0.0f, 1.5f);
-                }
-                else if (heldItem.name.Equals("Sword"))
-                {
-                    player.attackCooldownTime = 0.25f;
-                    player.defense = 10.0f;
-                    player.startingStamina = 200.0f;
-                    heldItem.transform.localEulerAngles = holdSlot.transform.localEulerAngles;
-                    heldItem.transform.Rotate(Vector3.up * -130);
-                    heldItem.transform.localPosition = holdSlot.transform.localPosition + new Vector3(-0.5f, 0.8f, -0.4f);
-                    heldItem.GetComponentInChildren<CapsuleCollider>().enabled = true;
-                    heldItem.GetComponentInChildren<SwordCollisionController>().isOnGround = false;
+                    itemToPickUp.transform.localEulerAngles = new Vector3(-3.5f, -90f, 128f);
+                    itemToPickUp.transform.localPosition = new Vector3(-0.2f, 0.6f, 1.7f);
                 }
                 Debug.Log("Picked up: " + heldItem.name);
             }
@@ -69,11 +49,11 @@ public class ControllerPlayerPickUpController : MonoBehaviour
                 heldItem.GetComponent<SphereCollider>().enabled = true;
                 heldItem.transform.parent = null;
                 HeldItemName = "None";
-                if (heldItem.GetComponentInChildren<SwordCollisionController>() != null)
-                {
-                    heldItem.GetComponentInChildren<SwordCollisionController>().isOnGround = true;
-                }
                 Debug.Log("Dropped: " + heldItem.name);
+                if (GetComponent<ControllerPlayerArrowShootingController>() != null)
+                {
+                    GetComponent<ControllerPlayerArrowShootingController>().enabled = false;
+                }
                 heldItem = null;
             }
             UpdateHeldItemUI();
@@ -98,7 +78,6 @@ public class ControllerPlayerPickUpController : MonoBehaviour
     {
         heldItemText.text = "Holding: " + (heldItem == null ? "None" : heldItem.name); // + "\nCan pick up: " + (heldItem == null) + "\nIs holding item: " + (heldItem == null);
     }
-
     public string getHeldItemName()
     {
         return HeldItemName;

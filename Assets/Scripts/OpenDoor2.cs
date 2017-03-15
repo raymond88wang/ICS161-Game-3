@@ -26,6 +26,7 @@ public class OpenDoor2 : MonoBehaviour
 
     public void EnemyDied()
     {
+        print(deadEnemies);
         deadEnemies += 1;
     }
 }

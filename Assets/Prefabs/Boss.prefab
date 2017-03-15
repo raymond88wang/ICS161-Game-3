@@ -20,9 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4692959452987568}
   - component: {fileID: 95930612278474618}
-  - component: {fileID: 136190082819546750}
-  - component: {fileID: 114676348457434142}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: LargeSwordPivot
   m_TagString: Untagged
   m_Icon: {fileID: 6926474624037801865, guid: 0000000000000000d000000000000000, type: 0}
@@ -75,8 +73,7 @@ GameObject:
   - component: {fileID: 114026558155097094}
   - component: {fileID: 114454625608300624}
   - component: {fileID: 114802436370214224}
-  - component: {fileID: 136960027706273574}
-  - component: {fileID: 82624616057929666}
+  - component: {fileID: 65059313116621264}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -111,7 +108,7 @@ GameObject:
   - component: {fileID: 4281465464419724}
   - component: {fileID: 33752360435759926}
   - component: {fileID: 23452451616570102}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Espadon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,9 +123,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4558738255232724}
-  m_Layer: 2
-  m_Name: Sword
-  m_TagString: item
+  m_Layer: 0
+  m_Name: Sword (1)
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,8 +183,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1276216532713888}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -26.941423, y: 4, z: 6.112946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -44.768475, y: 4, z: -62.98504}
   m_LocalScale: {x: 6, y: 4, z: 6}
   m_Children:
   - {fileID: 4469728018084560}
@@ -489,86 +486,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1261316486738618}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!82 &82624616057929666
-AudioSource:
+--- !u!65 &65059313116621264
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1276216532713888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3, y: 2, z: 0.8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95930612278474618
 Animator:
   serializedVersion: 3
@@ -609,6 +538,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2f5369dad778454fa79d8bf4ca42825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemy: {fileID: 114612740052854416}
+  damage: 5
 --- !u!114 &114612740052854416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -620,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9053828ebda3e42a3212c7da23aa45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 200
+  startingHealth: 1000
   currentHealth: 0
   lookRange: 30
   attackRange: 11
@@ -630,21 +561,6 @@ MonoBehaviour:
   currentBossHealthBar: {fileID: 0}
   bossHealthBar: {fileID: 0}
   door: {fileID: 0}
-  bossDead: {fileID: 8300000, guid: 1763737d55794664581ee9c6efcd8cf4, type: 3}
-  hit: {fileID: 8300000, guid: bbcb45e9fc289384f8ddb4d8d21d70d5, type: 3}
---- !u!114 &114676348457434142
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1038412560178490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a42de797d593ede43b0735139228bc2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  isOnGround: 0
 --- !u!114 &114802436370214224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -657,32 +573,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nearestTarget: {fileID: 0}
---- !u!136 &136190082819546750
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1038412560178490}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1
-  m_Height: 10
-  m_Direction: 1
-  m_Center: {x: 0, y: 2.5, z: 0}
---- !u!136 &136960027706273574
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1276216532713888}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.8
-  m_Height: 5
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.5, z: 0.2}
 --- !u!195 &195686905379415894
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -690,11 +580,11 @@ NavMeshAgent:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1276216532713888}
   m_Enabled: 1
-  m_Radius: 0.9
+  m_Radius: 0.6
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 200
+  m_AngularSpeed: 120
   m_StoppingDistance: 6
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0

@@ -24,9 +24,8 @@ GameObject:
   - component: {fileID: 135937346199703014}
   - component: {fileID: 54483616138634390}
   - component: {fileID: 65421257692529836}
-  - component: {fileID: 114893168116763236}
   - component: {fileID: 82501876853200492}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Bow
   m_TagString: item
   m_Icon: {fileID: 0}
@@ -41,7 +40,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4161657188013262}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: ArrowSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1455218288040712}
   m_LocalRotation: {x: 0, y: -0.6057801, z: 0, w: 0.7956322}
-  m_LocalPosition: {x: -0.79, y: -0, z: 0.12}
+  m_LocalPosition: {x: -0.45, y: -0, z: 0.01}
   m_LocalScale: {x: 1.9854153, y: 1.554533, z: 2.1790586}
   m_Children: []
   m_Father: {fileID: 4916391083078974}
@@ -68,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370885486182516}
   m_LocalRotation: {x: -0.055053867, y: -0.6955961, z: -0.7047619, w: 0.12816298}
-  m_LocalPosition: {x: 33.070484, y: 0.9439116, z: 19.99391}
+  m_LocalPosition: {x: 2.4, y: 1.55, z: -26.8}
   m_LocalScale: {x: 0.6000007, y: 0.50000024, z: 0.5000001}
   m_Children:
   - {fileID: 4161657188013262}
@@ -220,21 +219,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114893168116763236
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1370885486182516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd01755e2ddef3a458cfbeb08f95205f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabArrow: {fileID: 100000, guid: cff4c024d20095a458a66e6e0d47bf1b, type: 2}
-  spawnPoint: {fileID: 1455218288040712}
-  camDirection: {fileID: 0}
-  arrowForce: 800
 --- !u!135 &135937346199703014
 SphereCollider:
   m_ObjectHideFlags: 1
