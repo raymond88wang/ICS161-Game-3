@@ -189,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1430252110656982}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 41.503914, y: 1.069, z: 3.7838993}
+  m_LocalPosition: {x: 40.690475, y: 1.77, z: 2.3736372}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4818845736103156}
@@ -230,7 +230,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184666161271218}
   m_LocalRotation: {x: -0.25881904, y: -0, z: -0, w: 0.9659259}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.252, y: 0.266, z: -0.136}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4225428755866092}
@@ -674,6 +674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   isOnGround: 0
+  isPlayerHoldingSword: 0
 --- !u!135 &135929126102142630
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -682,7 +683,7 @@ SphereCollider:
   m_GameObject: {fileID: 1870674695569486}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.7
   m_Center: {x: 0, y: 0.25, z: -0.25}
@@ -695,10 +696,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 1.5
+  m_Radius: 0.2
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0.6, z: -0.2}
+  m_Center: {x: 0, y: 0.8, z: -0.1}
 --- !u!136 &136289715023901544
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -708,10 +709,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 1.1
   m_Height: 4
   m_Direction: 1
-  m_Center: {x: 0.2, y: -0.3, z: 0}
+  m_Center: {x: 0.2, y: -0.3, z: -0.2}
 --- !u!195 &195092156894588288
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -724,7 +725,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 2.3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
