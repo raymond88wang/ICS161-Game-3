@@ -539,7 +539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 114612740052854416}
-  damage: 15
+  damage: 10
 --- !u!114 &114612740052854416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9053828ebda3e42a3212c7da23aa45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 1000
+  startingHealth: 750
   currentHealth: 0
   lookRange: 30
   attackRange: 11
