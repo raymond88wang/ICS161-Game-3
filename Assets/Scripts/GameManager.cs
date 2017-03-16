@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
     {
         if (readyPanel.activeSelf)
         {
-            if (Input.GetJoystickNames() == null || Input.GetJoystickNames()[0] == "")
+            if (Input.GetJoystickNames() == null  || Input.GetJoystickNames().Length == 0)
             {
                 player2CanReady = false;
                 player2Ready = false;
