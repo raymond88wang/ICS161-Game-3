@@ -36,30 +36,16 @@ public class PlayerPickUpController : MonoBehaviour {
                 HeldItemName = heldItem.name;
                 if (heldItem.name.Equals("Bow"))
                 {
-                    player.attackCooldownTime = 0.5f;
-                    player.defense = 1.0f;
                     heldItem.gameObject.GetComponent<ArrowShootingController>().camDirection = player.GetComponentInChildren<Camera>().transform;
-                    heldItem.transform.localEulerAngles = new Vector3(-85f, -150f, -130f);
-                    heldItem.transform.localPosition = holdSlot.transform.localPosition + new Vector3(-0.8f, 1.4f, -0.5f);
+                    heldItem.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
+                    heldItem.transform.localPosition = new Vector3(-0.5f, 0f, 0f);
                 }
                 else if (heldItem.name.Equals("Key"))
                 {
-                    heldItem.transform.localEulerAngles = holdSlot.transform.localEulerAngles;
-                    heldItem.transform.Rotate(new Vector3(0, 60, -97));
-                    heldItem.transform.localPosition = holdSlot.transform.localPosition + new Vector3(-1.4f, 0.0f, 1.5f);
+                    heldItem.transform.localEulerAngles = new Vector3(-3.5f, -90f, 128f);
+                    heldItem.transform.localPosition = new Vector3(-0.2f, 0.6f, 1.7f);
                 }
-                else if (heldItem.name.Equals("Sword"))
-                {
-                    player.attackCooldownTime = 0.25f;
-                    player.defense = 10.0f;
-                    player.startingStamina = 200.0f;
-                    heldItem.transform.localEulerAngles = holdSlot.transform.localEulerAngles;
-                    heldItem.transform.Rotate(Vector3.up * -130);
-                    heldItem.transform.localPosition = holdSlot.transform.localPosition + new Vector3(-0.5f, 0.8f, -0.4f);
-                    heldItem.GetComponentInChildren<CapsuleCollider>().enabled = true;
-                    heldItem.GetComponentInChildren<SwordCollisionController>().isOnGround = false;
-                    heldItem.GetComponentInChildren<SwordCollisionController>().isPlayerHoldingSword = true;
-                }
+                
                 Debug.Log("Picked up: " + heldItem.name);
             }
 

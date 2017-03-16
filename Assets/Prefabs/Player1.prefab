@@ -91,7 +91,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1852771120990696
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -127,7 +127,8 @@ Transform:
   m_LocalRotation: {x: 0.06289886, y: -0, z: -0, w: 0.99801993}
   m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4531117556373416}
   m_Father: {fileID: 4248419692100292}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 7.2120004, y: 0, z: 0}
@@ -138,12 +139,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1814926426008202}
   m_LocalRotation: {x: -0, y: -0.715402, z: -0, w: 0.69871306}
-  m_LocalPosition: {x: 37.13, y: 1, z: 27.32}
+  m_LocalPosition: {x: 41.25, y: 1, z: 21.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4246717805601036}
   - {fileID: 4157715474591734}
-  - {fileID: 4531117556373416}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -91.352005, z: 0}
@@ -166,12 +166,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1852771120990696}
-  m_LocalRotation: {x: 0.06289887, y: -0, z: -0, w: 0.99801993}
-  m_LocalPosition: {x: 0.491, y: -0.197, z: 0.524}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5000001}
+  m_LocalRotation: {x: 0.000000014901161, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.73, y: -0.48, z: 0.68}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 4248419692100292}
-  m_RootOrder: 2
+  m_Father: {fileID: 4246717805601036}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20224989583860264
 Camera:
@@ -306,7 +306,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -394,7 +394,7 @@ MonoBehaviour:
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.19607843}
   defense: 1
-  attackCooldownTime: 0.5
+  attackCooldownTime: 0.25
   heartbeat: {fileID: 8300000, guid: 825eb5b4501d14547b9373887313f1db, type: 3}
   hit: {fileID: 8300000, guid: 9b7050f21e744ca409926bb8426e1d32, type: 3}
   dead: {fileID: 8300000, guid: 2ba3b4b98746b804887e134ac1b0aa67, type: 3}
@@ -466,6 +466,7 @@ MonoBehaviour:
   smoothing: {x: 3, y: 3}
   targetDirection: {x: 0, y: 0}
   targetCharacterDirection: {x: 0, y: 0}
+  mouse: {fileID: 0}
   characterBody: {fileID: 1814926426008202}
 --- !u!124 &124369321643761766
 Behaviour:

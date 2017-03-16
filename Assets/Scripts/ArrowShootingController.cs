@@ -4,7 +4,7 @@ public class ArrowShootingController : MonoBehaviour {
     public GameObject prefabArrow;
     public GameObject spawnPoint;
     public Transform camDirection;
-    public float arrowForce = 800.0f;
+    public float arrowForce = 1500.0f;
 
     private void Awake()
     {

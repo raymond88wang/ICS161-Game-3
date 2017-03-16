@@ -54,7 +54,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1794634016303302
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -110,12 +110,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1794634016303302}
-  m_LocalRotation: {x: 0.06289887, y: -0, z: -0, w: 0.99801993}
-  m_LocalPosition: {x: 0.491, y: -0.197, z: 0.524}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5000001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.73, y: -0.48, z: 0.68}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 4620826155422650}
-  m_RootOrder: 2
+  m_Father: {fileID: 4474310001088434}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4474310001088434
 Transform:
@@ -126,7 +126,8 @@ Transform:
   m_LocalRotation: {x: 0.06289887, y: -0.000061780214, z: 0.0000038929284, w: 0.99801993}
   m_LocalPosition: {x: 0, y: 0.70000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4128348270031232}
   m_Father: {fileID: 4620826155422650}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 7.2120004, y: 0, z: 0}
@@ -150,13 +151,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273399408773912}
-  m_LocalRotation: {x: -0, y: -0.9999396, z: -0, w: 0.010996568}
-  m_LocalPosition: {x: 16.033278, y: 1, z: -24.093422}
+  m_LocalRotation: {x: -0, y: -0.7437764, z: -0, w: -0.6684286}
+  m_LocalPosition: {x: 31.47, y: 1, z: 27.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4474310001088434}
   - {fileID: 4522549465247232}
-  - {fileID: 4128348270031232}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -178.74, z: 0}
@@ -405,7 +405,7 @@ MonoBehaviour:
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.19607843}
   defense: 1
-  attackCooldownTime: 0.5
+  attackCooldownTime: 0.25
   heartbeat: {fileID: 8300000, guid: 825eb5b4501d14547b9373887313f1db, type: 3}
   hit: {fileID: 8300000, guid: 9b7050f21e744ca409926bb8426e1d32, type: 3}
   dead: {fileID: 8300000, guid: 2ba3b4b98746b804887e134ac1b0aa67, type: 3}
