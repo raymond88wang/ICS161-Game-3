@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 65633367922602588}
   - component: {fileID: 23428311480993884}
   - component: {fileID: 95247485958854464}
-  - component: {fileID: 114429043700470988}
   - component: {fileID: 82608301123934614}
   m_Layer: 0
   m_Name: 'Platform '
@@ -356,7 +355,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -386,17 +385,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114429043700470988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1998900935637252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d5e2880374bb3540882844c3288a921, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &135281117873005748
 SphereCollider:
   m_ObjectHideFlags: 1
