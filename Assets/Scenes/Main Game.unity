@@ -6913,7 +6913,7 @@ GameObject:
   - component: {fileID: 1407356737}
   - component: {fileID: 1407356736}
   m_Layer: 0
-  m_Name: Invisible Wall Test
+  m_Name: Invisible Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
