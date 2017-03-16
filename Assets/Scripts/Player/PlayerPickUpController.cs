@@ -58,6 +58,7 @@ public class PlayerPickUpController : MonoBehaviour {
                     heldItem.transform.localPosition = holdSlot.transform.localPosition + new Vector3(-0.5f, 0.8f, -0.4f);
                     heldItem.GetComponentInChildren<CapsuleCollider>().enabled = true;
                     heldItem.GetComponentInChildren<SwordCollisionController>().isOnGround = false;
+                    heldItem.GetComponentInChildren<SwordCollisionController>().isPlayerHoldingSword = true;
                 }
                 Debug.Log("Picked up: " + heldItem.name);
             }

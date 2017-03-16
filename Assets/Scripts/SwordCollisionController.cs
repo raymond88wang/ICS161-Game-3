@@ -3,6 +3,7 @@
 public class SwordCollisionController : MonoBehaviour {
     public float damage = 5.0f;
     public bool isOnGround = true;
+    public bool isPlayerHoldingSword = false;
 
     private void Start()
     {
@@ -21,18 +22,25 @@ public class SwordCollisionController : MonoBehaviour {
                 if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("SwingSword"))
                 {
                     collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+                    damage = 0.0f;
                 }
             }
         }
-        if(collider.gameObject.GetComponent<PlayerHealth>() != null && collider.gameObject.GetComponent<PlayerHealth>().currentHealth > 0 && !isOnGround)
+        if(collider.gameObject.GetComponent<PlayerHealth>() != null && collider.gameObject.GetComponent<PlayerHealth>().currentHealth > 0)
         {
-            if(transform.parent.transform.parent.transform.parent == null)
+            if(!isOnGround && !isPlayerHoldingSword)
             {
                 if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("SwingSword"))
                 {
                     collider.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+                    damage = 0.0f;
                 }
             }
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        damage = 5f;
     }
 }

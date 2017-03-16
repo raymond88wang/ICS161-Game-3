@@ -85,7 +85,6 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<AudioSource>().PlayOneShot(hit, 0.5f);
 
         damaged = true;
-
         currentHealth -= (damageAmount / defense);
 
         updateHealth();
