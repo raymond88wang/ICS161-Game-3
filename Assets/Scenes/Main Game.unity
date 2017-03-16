@@ -7493,7 +7493,7 @@ MonoBehaviour:
   meleeEnemy: {fileID: 1433275003}
   rangedEnemy: {fileID: 1548541882}
   door: {fileID: 1726632563}
-  killedEnemiesNeeded: 2
+  killedEnemiesNeeded: 4
 --- !u!208 &1726632572
 NavMeshObstacle:
   m_ObjectHideFlags: 0
