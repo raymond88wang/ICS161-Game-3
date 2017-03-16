@@ -109,17 +109,21 @@ public class PlayerHealth : MonoBehaviour
         {
             GetComponent<PlayerMovementController>().enabled = false;
         }
-        if (GetComponent<PlayerArrowShootingController>() != null)
+        if (GetComponent<PlayerAttackController>() != null)
         {
-            GetComponent<PlayerArrowShootingController>().enabled = false;
+            GetComponent<PlayerAttackController>().enabled = false;
         }
         if (GetComponent<ControllerPlayerMovementController>() != null)
         {
             GetComponent<ControllerPlayerMovementController>().enabled = false;
         }
-        if (GetComponent<ControllerPlayerArrowShootingController>() != null)
+        if (GetComponent<ControllerPlayerAttackController>() != null)
         {
-            GetComponent<ControllerPlayerArrowShootingController>().enabled = false;
+            GetComponent<ControllerPlayerAttackController>().enabled = false;
+        }
+        if (GetComponent<ArrowShootingController>() != null)
+        {
+            GetComponent<ArrowShootingController>().enabled = false;
         }
         restartTimer = 3;
         Invoke("ReloadLevel", restartTimer);

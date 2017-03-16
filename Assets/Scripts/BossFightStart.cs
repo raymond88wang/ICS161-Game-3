@@ -16,13 +16,10 @@ public class BossFightStart : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         GameObject.FindGameObjectWithTag("Game Music").GetComponent<AudioSource>().Stop();
-        if(!bossBattle.isPlaying && boss != null)
-        {
-            bossBattle.Play();
-        }
-        if (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player2"))
+        if(!bossBattle.isPlaying && boss != null && (other.gameObject.CompareTag("Player1") || other.gameObject.CompareTag("Player2")))
         {
             bossHealthBar.SetActive(true);
+            bossBattle.Play();
         }
     }
 }

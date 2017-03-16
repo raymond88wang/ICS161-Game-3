@@ -7,11 +7,13 @@ public class PlayerPickUpController : MonoBehaviour {
     public GameObject holdSlot;
     private string HeldItemName;
     public Text heldItemText;
+    private PlayerHealth player;
 
     private void Start ()
     {
         HeldItemName = "None";
         UpdateHeldItemUI();
+        player = GetComponent<PlayerHealth>();
     }
 
     private void Update ()
@@ -29,10 +31,10 @@ public class PlayerPickUpController : MonoBehaviour {
                     HeldItemName = heldItem.name;
                     if (heldItem.name.Equals("Bow"))
                     {
-                        //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
-                        itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
+                    heldItem.gameObject.GetComponent<ArrowShootingController>().camDirection = player.GetComponentInChildren<Camera>().transform;
+                    //itemToPickUp.transform.localPosition = new Vector3( -.5f, - 1.7f, - 3.5f);
+                    itemToPickUp.transform.localEulerAngles = new Vector3(-76f, -180f, -90f);
                         itemToPickUp.transform.localPosition = new Vector3(-.5f, 0, 0);
-                        GetComponent<PlayerArrowShootingController>().enabled = true;
                     }
                     else if (heldItem.name.Equals("Key"))
                     {
@@ -49,10 +51,6 @@ public class PlayerPickUpController : MonoBehaviour {
                     heldItem.transform.parent = null;
                     HeldItemName = "None";
                     Debug.Log("Dropped: " + heldItem.name);
-                    if (GetComponent<PlayerArrowShootingController>() != null)
-                    {
-                        GetComponent<PlayerArrowShootingController>().enabled = false;
-                    }
                     heldItem = null;
                 }
                 UpdateHeldItemUI();

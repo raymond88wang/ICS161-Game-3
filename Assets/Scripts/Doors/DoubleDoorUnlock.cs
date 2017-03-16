@@ -6,6 +6,7 @@ public class DoubleDoorUnlock : MonoBehaviour
     private GameObject P1;
     private GameObject P2;
     private Animator anim;
+    private AudioSource audioPlayer;
 
     // Use this for initialization
     void Start()
@@ -13,6 +14,7 @@ public class DoubleDoorUnlock : MonoBehaviour
         P1 = GameObject.FindGameObjectWithTag("Player1");
         P2 = GameObject.FindGameObjectWithTag("Player2");
         anim = GetComponent<Animator>();
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -20,7 +22,7 @@ public class DoubleDoorUnlock : MonoBehaviour
     {
         if (P1.GetComponent<UnlockController>().playerUsedKeyTrue() && P2.GetComponent<ControllerUnlockController>().playerUsedKeyTrue())
         {
-            //Destroy(gameObject);
+            audioPlayer.Play();
             anim.SetTrigger("Open");
             P1.GetComponent<UnlockController>().resetPlayerUsedKeyBool();
             P2.GetComponent<ControllerUnlockController>().resetPlayerUsedKeyBool();

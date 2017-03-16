@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54483616138634390}
   - component: {fileID: 65421257692529836}
   - component: {fileID: 82501876853200492}
+  - component: {fileID: 114577181583543538}
   m_Layer: 8
   m_Name: Bow
   m_TagString: item
@@ -219,6 +220,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114577181583543538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370885486182516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809cb5f084010743b1eb61455e422ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabArrow: {fileID: 100000, guid: cff4c024d20095a458a66e6e0d47bf1b, type: 2}
+  spawnPoint: {fileID: 1455218288040712}
+  camDirection: {fileID: 0}
+  arrowForce: 1500
 --- !u!135 &135937346199703014
 SphereCollider:
   m_ObjectHideFlags: 1

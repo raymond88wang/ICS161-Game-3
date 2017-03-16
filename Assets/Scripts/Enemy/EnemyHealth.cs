@@ -7,12 +7,14 @@ public class EnemyHealth : MonoBehaviour {
     public float lookRange = 20.0f;
     public float attackRange = 5.0f;
     public float attackCooldownTime = 1.0f;
+    public int attackDamage = 5;
     public bool isRanged = false;
     public bool isBoss = false;
     public Image currentBossHealthBar = null;
     public GameObject bossHealthBar = null;
     public GameObject door = null;
     public AudioClip bossDead;
+    public AudioClip hit;
 
     void Awake()
     {
@@ -22,6 +24,7 @@ public class EnemyHealth : MonoBehaviour {
 
     public void TakeDamage(int amount)
     {
+        GetComponent<AudioSource>().PlayOneShot(hit, 0.5f);
         currentHealth -= amount;
 
         if (isBoss)

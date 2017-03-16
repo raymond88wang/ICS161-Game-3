@@ -79,9 +79,9 @@ GameObject:
   - component: {fileID: 114097052389507580}
   - component: {fileID: 114269767139035806}
   - component: {fileID: 114285431900501346}
-  - component: {fileID: 114748964705265634}
   - component: {fileID: 81605635093904868}
   - component: {fileID: 82584105571593356}
+  - component: {fileID: 114794513601634394}
   m_Layer: 10
   m_Name: Player1
   m_TagString: Player1
@@ -138,15 +138,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1814926426008202}
-  m_LocalRotation: {x: -0, y: -0.9990444, z: 0, w: -0.04370639}
-  m_LocalPosition: {x: 35.96, y: 1, z: 27.61}
+  m_LocalRotation: {x: -0, y: -0.78793937, z: -0, w: 0.6157528}
+  m_LocalPosition: {x: 36.4, y: 1, z: 28.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4246717805601036}
   - {fileID: 4157715474591734}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -88.743004, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -103.98701, z: 0}
 --- !u!4 &4425725010188242
 Transform:
   m_ObjectHideFlags: 1
@@ -395,7 +395,7 @@ MonoBehaviour:
   staminaReplenishScale: 30
   attackCooldownTime: 0.25
   heartbeat: {fileID: 8300000, guid: 825eb5b4501d14547b9373887313f1db, type: 3}
-  hit: {fileID: 8300000, guid: bbcb45e9fc289384f8ddb4d8d21d70d5, type: 3}
+  hit: {fileID: 8300000, guid: 9b7050f21e744ca409926bb8426e1d32, type: 3}
   dead: {fileID: 8300000, guid: 2ba3b4b98746b804887e134ac1b0aa67, type: 3}
   deathMessage: {fileID: 0}
   restartMessage: {fileID: 0}
@@ -456,7 +456,7 @@ MonoBehaviour:
   targetCharacterDirection: {x: 0, y: 0}
   mouse: {fileID: 0}
   characterBody: {fileID: 1814926426008202}
---- !u!114 &114748964705265634
+--- !u!114 &114794513601634394
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -464,13 +464,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1814926426008202}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd01755e2ddef3a458cfbeb08f95205f, type: 3}
+  m_Script: {fileID: 11500000, guid: d011195eaf74a18438a5c72738d37592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabArrow: {fileID: 100000, guid: cff4c024d20095a458a66e6e0d47bf1b, type: 2}
-  spawnPoint: {fileID: 1852771120990696}
-  camDirection: {fileID: 4246717805601036}
-  arrowForce: 1500
 --- !u!124 &124369321643761766
 Behaviour:
   m_ObjectHideFlags: 1

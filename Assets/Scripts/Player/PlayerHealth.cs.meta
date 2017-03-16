@@ -1,10 +1,20 @@
 fileFormatVersion: 2
 guid: fb2b990ac66b2dd4ea679d403fb55773
-timeCreated: 1489027215
+timeCreated: 1489630795
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - damageImage: {instanceID: 0}
+  - currentHealthBar: {instanceID: 0}
+  - currentStaminaBar: {instanceID: 0}
+  - heartbeat: {fileID: 8300000, guid: 825eb5b4501d14547b9373887313f1db, type: 3}
+  - hit: {fileID: 8300000, guid: 9b7050f21e744ca409926bb8426e1d32, type: 3}
+  - dead: {fileID: 8300000, guid: 2ba3b4b98746b804887e134ac1b0aa67, type: 3}
+  - deathMessage: {fileID: 114191025406103788, guid: 3c1750f91cd92be43a47b77c400bff51,
+      type: 2}
+  - restartMessage: {fileID: 114825483450824898, guid: 3c1750f91cd92be43a47b77c400bff51,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

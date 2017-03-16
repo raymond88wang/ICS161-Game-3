@@ -3,21 +3,19 @@
 public class OpenDoor : MonoBehaviour
 {
 
-    Animator anim;
-    private AudioSource slidingDoor;
+    private Animator anim;
+    private AudioSource audioPlayer;
+    public AudioClip openDoorSound;
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        slidingDoor = GetComponent<AudioSource>();
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     public void OpenTheDoor()
     {
-        if(slidingDoor != null)
-        {
-            slidingDoor.Play();
-        }
+        audioPlayer.PlayOneShot(openDoorSound, 2.0f);
         anim.SetTrigger("Open");
     }
 }
