@@ -21,7 +21,7 @@ public class ControllerPlayerArrowShootingController : MonoBehaviour {
     private void Update()
     {
         timer += Time.deltaTime;
-        if (Input.GetButtonDown("B") && timer >= player.attackCooldownTime)  //can add xbox control in or statement
+        if ((Input.GetButtonDown("B") || Input.GetButtonDown("RightBumper")) && timer >= player.attackCooldownTime)  //can add xbox control in or statement
         {
             GameObject Temp_Arrow = Instantiate(prefabArrow, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
             Temp_Arrow.transform.Rotate(Vector3.up * 90);
