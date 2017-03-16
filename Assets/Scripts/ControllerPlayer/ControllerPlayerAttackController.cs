@@ -14,7 +14,7 @@ public class ControllerPlayerAttackController : MonoBehaviour {
     void Update()
     {
         timer += Time.deltaTime;
-        if (Input.GetButtonDown("B") && timer >= player.attackCooldownTime && pickUp.heldItem != null)
+        if ((Input.GetButtonDown("B") || Input.GetButtonDown("RightBumper")) && timer >= player.attackCooldownTime && pickUp.heldItem != null)
         {
             if (pickUp.heldItem.name.Equals("Bow"))
             {
