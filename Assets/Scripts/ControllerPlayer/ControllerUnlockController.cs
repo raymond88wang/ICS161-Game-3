@@ -17,7 +17,7 @@ public class ControllerUnlockController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canUnlock && Input.GetButtonDown("B"))
+        if (canUnlock && (Input.GetButtonDown("B") || Input.GetButtonDown("RightBumper")))
         {
             Debug.Log(Lock.transform.parent.parent);
             if (Lock.transform.parent.parent.parent != null && Lock.transform.parent.parent.parent.CompareTag("double doors"))
