@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class UnlockController : MonoBehaviour {
 
@@ -26,21 +27,25 @@ public class UnlockController : MonoBehaviour {
             else if (Lock.transform.parent.parent.CompareTag("platformA"))
             {
                 Debug.Log("Player 1 can pull down platform Y.");
+                StartCoroutine(PlayPlatformSound("platformY"));
                 GameObject.FindGameObjectWithTag("platformY").GetComponent<Animator>().SetTrigger("Lower");
             }
             else if (Lock.transform.parent.parent.CompareTag("platformX"))
             {
                 Debug.Log("Player 1 can pull down platform B.");
+                StartCoroutine(PlayPlatformSound("platformB"));
                 GameObject.FindGameObjectWithTag("platformB").GetComponent<Animator>().SetTrigger("Lower");
             }
             else if (Lock.transform.parent.parent.CompareTag("platformB"))
             {
                 Debug.Log("Player 1 can pull down platform Z.");
+                StartCoroutine(PlayPlatformSound("platformC"));
                 GameObject.FindGameObjectWithTag("platformZ").GetComponent<Animator>().SetTrigger("Lower");
             }
             else if (Lock.transform.parent.parent.CompareTag("platformY"))
             {
                 Debug.Log("Player 1 can pull down platform C.");
+                StartCoroutine(PlayPlatformSound("platformC"));
                 GameObject.FindGameObjectWithTag("platformC").GetComponent<Animator>().SetTrigger("Lower");
             }
             else
@@ -86,4 +91,9 @@ public class UnlockController : MonoBehaviour {
         playerUsedKey = false;
     }
 
+    IEnumerator PlayPlatformSound(string platform)
+    {
+        yield return new WaitForSeconds(1);
+        GameObject.FindGameObjectWithTag(platform).GetComponent<AudioSource>().Play();
+    }
 }

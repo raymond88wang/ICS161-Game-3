@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class LowerPlatform : MonoBehaviour {
 
-    Animator anim;
+    private Animator anim;
+    private AudioSource audioPlayer;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     public void LowerThePlatform()
     {
+        audioPlayer.Play();
         anim.SetTrigger("Lower");
     }
 }
