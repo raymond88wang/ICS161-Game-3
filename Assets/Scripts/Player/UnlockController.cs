@@ -47,6 +47,7 @@ public class UnlockController : MonoBehaviour {
             {
                 //Destroy(Lock.transform.parent.gameObject);
                 //Destroy(Lock);
+                Lock.transform.parent.GetComponent<AudioSource>().Play();
                 Lock.transform.parent.GetComponent<Animator>().SetTrigger("Open");
             }
             canUnlock = false;

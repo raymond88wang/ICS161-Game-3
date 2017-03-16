@@ -45,6 +45,7 @@ public class EnemyHealth : MonoBehaviour {
         {
             GameObject.FindGameObjectWithTag("Boss Battle Music").GetComponent<AudioSource>().Stop();
             GameObject.FindGameObjectWithTag("Boss Battle Music").GetComponent<AudioSource>().PlayOneShot(bossDead, 0.5f);
+            GameObject.FindGameObjectWithTag("Game Music").GetComponent<GameAudioManager>().StartCoroutine("StartGameMusicAgain");
             bossHealthBar.SetActive(false);
         }
         Destroy(gameObject, 0);     
